@@ -25,7 +25,7 @@ def dateDays(year,month,day):
     days = 0
     for y in range(year):
         days = days + yearLength(y)
-    for m in range(month):
+    for m in range(1,month):
         days = days + monthLength(year,m)
     return days + day
 
@@ -42,7 +42,7 @@ def main():
     year2,month2,day2 = inputDate("slutdatum")
     print("Skillnaden är", dateDiff(year1,month1,day1,year2,month2,day2))
 
-main()
+# main()
 
 """
 def checkDate(year,month,day):

@@ -1,0 +1,130 @@
+# 1
+programmering N programming
+dator N computer
+datasystem , mjukvarusystem N software system
+programmerare N programmer
+programmera V program
+algoritm N algorithm
+instruktionsföljd N sequence of instructions
+programspråk , programmeringsspråk N programming language
+kringutrustning NP peripherals
+installera V install
+surfplatta N tablet
+datavetenskap , datalogi N computer science
+textanalys N text analysis
+visualisering N visualization
+animering N animation
+interaktiv A interactive
+grafisk A graphical
+maskininlärning N machine learning
+data N data
+artificiell intelligens , AI N artificial intelligence , AI
+interpretator , tolk N interpreter
+texteditor N text editor
+kommandoterminal , shell N shell
+fil N file
+köra , exekvera V run , execute
+öppen källkod N open source
+mjukvara N software
+webb N web
+uttryck N expression
+sats N statement
+evaluera , beräkna värdet på x V evaluate , compute the value of x
+beräkna V compute
+värde N value
+prompt N prompt
+prioritet N precedence
+addition N addition
+multiplikation N multiplication
+division N division
+parentes N parenthesis
+flyttalsdivision N floating point division
+heltalsdivision N integer division
+flyttal N floating point number
+heltal N integer
+tal N number
+konkatenering N concatenation
+sträng N string
+mellanslag N space
+fnutt , citationstecken N quote
+enkelfnutt N single quote
+dubbelfnutt N double quote
+skriva ut V print
+fel N error
+syntaxfel N syntax error
+namnfel N name error
+typfel N type error
+markör N cursor
+addera V add
+grammatik N grammar
+syntax N syntax
+semantik N semantics
+reserverat ord , nyckelord N reserved word , keyword
+literal N literal
+numerisk A numerical
+konstant N constant
+operator N operator
+specialtecken N special character
+tecken N character
+funktion N function
+inbyggd N built-in
+användardefinierad N user-defined
+bokstav N letter
+siffra N digit
+variabel N variable
+namn , indentifierare N name , identifier
+tilldelning N assignment
+tilldelningssats N assignment statement , assignment
+definiera V define
+parameter N parameter
+argument N argument
+anropa N call
+återanvändbar A reusable
+kommentar N comment
+input , inmatning N input
+användare N user
+importera V import
+bibliotek N library
+diagram N diagram
+påskägg N Easter egg
+for-sats , for-loop N for loop
+lista N list
+element N element
+indentering N indentation
+oändlig loop N infinite loop
+spaghettikod N spaghetti code
+villkor N condition
+sann N true
+strukturerad N structured
+döda V kill
+grammatikregel N grammar rule
+block N block
+kodelement N code element
+kod N code
+dokumentation N documentation
+layout-regel N layout rule
+källspråk N source language
+maskinspråk N machine language
+kompilator N compiler
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

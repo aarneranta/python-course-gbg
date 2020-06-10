@@ -106,25 +106,70 @@ layout-regel N layout rule
 källspråk N source language
 maskinspråk N machine language
 kompilator N compiler
+utrustning N equipment
+tangentbord N keyboard
+kamera N camera
+mus N mouse
+mikrofon N microphone
+arbetsminne , primärminne , RAM N main memory , Random Access Memory , RAM
+skärm N monitor , screen
+skrivare N printer
+högtalare N loudspeaker
+hårddisk N hard drive , hard disk
+USB-minne N USB memory stick
+lagra V store
+ladda V load
+översätta V translate
+skräpsamla V garbage-collect
+skräpsamling N garbage collection
+register N register
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# 2
+koda V code
+analysera V analyse , analyze
+testa V test
+modulär A modular
+testfall N test case
+avlusning N debugging
+avlusa V debug
+bugg N bug
+underhåll N maintenance
+underhålla V maintain
+rad N line
+abstraktion N abstraction
+process N process
+kommandorad N comman line
+skript N script
+magiskt tal N magic number
+ingångsvärde N input value
+precision N precision
+felhantering N error handling
+felmeddelande N error message
+villkorssats N conditional statement
+modul N module
+programmodul N program module
+returnera V return
+returvärde N return value
+rest N remainder
+undantag N exception
+attackerare N attacker
+sidoeffekt N side effect
+ren funktion N pure function
+räckvidd , scope N scope
+lokal N local
+global N global
+lokal variabel N local variable
+global variabel N global variable
+nästlad N nested
+tillstånd N state
+imperativ A imperative
+funktionell A functional
+objektorienterad A object-oriented
+statiskt typad A statically typed
+dynamiskt typad A dynamically typed
+statisk typning N static typing
+dynamisk typning N dynamic typing
+klass N class
+objekt N object
 

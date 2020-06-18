@@ -173,3 +173,48 @@ dynamisk typning N dynamic typing
 klass N class
 objekt N object
 
+# 3
+avrundning N rounding
+konversion N conversion
+representation N representation
+absolutbelopp N absolute value
+potens , exponentiering N exponentiation
+delare N divisor
+decimaldel N decimal part
+avrunda V round
+signifikant siffra N significant digit
+decimalpunkt N decimal point
+mantissa N mantissa
+exponent N exponent
+bas N basis
+talsystem N numeral system
+position N position
+potens N power
+jämn A even
+udda A odd
+bit N bit
+byte N byte
+ord N word
+ordlängd N word length
+fakultet N factorial
+kvadratrot N square root
+andragradsekvation N quadratic equation
+lösning N solution
+diskriminant N discriminant
+ackumulator N accumulator
+tabulatortecken N tab character
+tabell N table
+egenskapsbaserad testning N property-based testing
+slumpmässig N random
+pythagoreisk A Pythagorean
+trippel N triple
+tuppel N tuple
+generera V generate
+
+
+
+
+
+
+
+

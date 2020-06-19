@@ -48,7 +48,9 @@ def precisionLoss(n,iters):
         c = 3*r
         print(c)
     
-
+def swedish(d):
+    return int(d + 0.5)
+        
 def approxPi(n):
     div = 1
     sign = 1 
@@ -64,10 +66,10 @@ def quadraticEq(a,b,c):
     if discr < 0:
         return []
     elif discr == 0:
-        return -b / (2*a)
+        return [-b/(2*a)]
     else:
         rdiscr = math.sqrt(discr)
-        return (-b - rdiscr)/(2*a), (-b + rdiscr)/(2*a)
+        return [(-b - rdiscr)/(2*a), (-b + rdiscr)/(2*a)]
 
 
 def multiTable(n):

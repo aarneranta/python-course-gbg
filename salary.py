@@ -26,7 +26,7 @@ def main():
     rent = int(input("Ange hyra: "))
     salary(sal,tax,rent)
 
-# main()
+main()
 
 
 

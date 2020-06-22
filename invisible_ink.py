@@ -6,7 +6,7 @@
 #   $ python3 invisible_ink.py develop f.tmp
 
 import sys
-import mathChapter3 as ma
+import binaryconv as bc
 
 def padbin(bin,n):
     need = 8 - len(bin)
@@ -17,13 +17,13 @@ def padbin(bin,n):
 def txt2bin(txt):
     bin = []
     for c in txt:
-        bin.append(padbin(ma.dec2bin(ord(c)),8))
+        bin.append(padbin(bc.dec2bin(ord(c)),8))
     return "".join(bin)
 
 def bin2txt(bin):
     txt = []
     while bin:
-        txt.append(chr(ma.bin2dec(bin[:8])))
+        txt.append(chr(bc.bin2dec(bin[:8])))
         bin = bin[8:]
     return "".join(txt)
 
@@ -65,6 +65,14 @@ def main():
     src.close()
 
 main()
+
+def simpleAsciiTable():
+    for a in range(0,32):
+        row = ""
+        for k in range(0,8):
+            row = row + str(a+32*k) + ' ' + chr(a+32*k) + '\t' 
+        print(row)
+
 
 
     

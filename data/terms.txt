@@ -29,7 +29,7 @@ mjukvara N software
 webb N web
 uttryck N expression
 sats N statement
-evaluera , beräkna värdet på x V evaluate , compute the value of x
+evaluera , utvärdera V evaluate
 beräkna V compute
 värde N value
 prompt N prompt

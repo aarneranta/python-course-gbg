@@ -137,6 +137,9 @@ bugg N bug
 underhåll N maintenance
 underhålla V maintain
 rad N line
+versionskontroll N version control
+moln N cloud
+katalog , mapp N directory
 abstraktion N abstraction
 process N process
 kommandorad N comman line

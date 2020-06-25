@@ -157,6 +157,9 @@ returvärde N return value
 rest N remainder
 undantag N exception
 attackerare N attacker
+attack N attack
+kodinjektion N code injection
+säkerhetslucka N security hole
 sidoeffekt N side effect
 ren funktion N pure function
 räckvidd , scope N scope

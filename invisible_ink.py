@@ -55,14 +55,14 @@ def invisible2txt(inv):
 
 def main():
     mode = sys.argv[1]
-    file = sys.argv[2]
-    src = open(file)
-    content = src.read()
+    filename = sys.argv[2]
+    file = open(filename)
+    content = file.read()
     if mode == "develop":
         print(invisible2txt(content))
     else:
         print(txt2invisible(content))
-    src.close()
+    file.close()
 
 main()
 

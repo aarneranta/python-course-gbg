@@ -1,4 +1,4 @@
-# binary conversion
+# binary conversion and other math functions for lecture 3
 
 import math
 
@@ -90,6 +90,12 @@ def pythagoreans(mx):
                 if a*a + b*b == c*c:
                     print(a,b,c,":",a*a,"+",b*b,"=",c*c)
 
+def newton(r,n):
+    guess = r/2
+    for i in range(n):
+        guess = (guess + r/guess)/2
+        print(guess, "\terror:\t", math.sqrt(r)-guess)
+    return guess
 
 
 ######### for later use

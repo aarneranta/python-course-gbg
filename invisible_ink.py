@@ -2,7 +2,7 @@
 #   encrypt a file to a sequence of spaces (0) and tabs (1) by using ord()
 #   develop the result by an inverse method
 # example usage:
-#   $ python3 invisible_ink.py encrypt mathChapter3.py >f.tmp
+#   $ python3 invisible_ink.py encrypt binaryconv.py >f.tmp
 #   $ python3 invisible_ink.py develop f.tmp
 
 import sys
@@ -10,8 +10,7 @@ import binaryconv as bc
 
 def padbin(bin,n):
     need = 8 - len(bin)
-    for i in range(need):
-        bin = '0' + bin
+    bin = need*'0' + bin
     return bin
 
 def txt2bin(txt):
@@ -55,14 +54,14 @@ def invisible2txt(inv):
 
 def main():
     mode = sys.argv[1]
-    file = sys.argv[2]
-    src = open(file)
-    content = src.read()
+    filename = sys.argv[2]
+    file = open(filename)
+    content = file.read()
     if mode == "develop":
         print(invisible2txt(content))
     else:
         print(txt2invisible(content))
-    src.close()
+    file.close()
 
 main()
 

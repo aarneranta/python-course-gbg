@@ -1,222 +1,253 @@
 # 1
-programmering N programming
-dator N computer
-datasystem , mjukvarusystem N software system
-programmerare N programmer
-programmera V program
-algoritm N algorithm
-instruktionsföljd N sequence of instructions
-programspråk , programmeringsspråk N programming language
+programmering	N programming
+dator	N computer
+datasystem , mjukvarusystem	N software system
+programmerare	N programmer
+programmera	V program
+program		N program
+algoritm	N algorithm
+instruktionsföljd	N sequence of instructions
+programspråk , programmeringsspråk	N programming language
 kringutrustning NP peripherals
-installera V install
-surfplatta N tablet
-datavetenskap , datalogi N computer science
-textanalys N text analysis
-visualisering N visualization
-animering N animation
-interaktiv A interactive
-grafisk A graphical
-maskininlärning N machine learning
-data N data
-artificiell intelligens , AI N artificial intelligence , AI
-interpretator , tolk N interpreter
-texteditor N text editor
-kommandoterminal , shell N shell
-fil N file
-köra , exekvera V run , execute
-öppen källkod N open source
-mjukvara N software
-webb N web
-uttryck N expression
-sats N statement
-evaluera , utvärdera V evaluate
-beräkna V compute
-värde N value
-prompt N prompt
-prioritet N precedence
-addition N addition
-multiplikation N multiplication
-division N division
-parentes N parenthesis
-flyttalsdivision N floating point division
-heltalsdivision N integer division
-flyttal N floating point number
-heltal N integer
-tal N number
-konkatenering N concatenation
-sträng N string
-mellanslag N space
-fnutt , citationstecken N quote
-enkelfnutt N single quote
-dubbelfnutt N double quote
-skriva ut V print
-fel N error
-syntaxfel N syntax error
-namnfel N name error
-typfel N type error
-markör N cursor
-addera V add
-grammatik N grammar
-syntax N syntax
-semantik N semantics
-reserverat ord , nyckelord N reserved word , keyword
-literal N literal
-numerisk A numerical
-konstant N constant
-operator N operator
-specialtecken N special character
-tecken N character
-funktion N function
-inbyggd N built-in
-användardefinierad N user-defined
-bokstav N letter
-siffra N digit
-variabel N variable
-namn , indentifierare N name , identifier
-tilldelning N assignment
-tilldelningssats N assignment statement , assignment
-definiera V define
-parameter N parameter
-argument N argument
-anropa N call
-återanvändbar A reusable
-kommentar N comment
-input , inmatning N input
-användare N user
-importera V import
-bibliotek N library
-diagram N diagram
-påskägg N Easter egg
-for-sats , for-loop N for loop
-lista N list
-element N element
-indentering N indentation
-oändlig loop N infinite loop
-spaghettikod N spaghetti code
-villkor N condition
-sann N true
-strukturerad N structured
-döda V kill
-grammatikregel N grammar rule
-block N block
-kodelement N code element
-kod N code
-dokumentation N documentation
-layout-regel N layout rule
-källspråk N source language
-maskinspråk N machine language
-kompilator N compiler
-utrustning N equipment
-tangentbord N keyboard
-kamera N camera
-mus N mouse
-mikrofon N microphone
-arbetsminne , primärminne , RAM N main memory , Random Access Memory , RAM
-skärm N monitor , screen
-skrivare N printer
-högtalare N loudspeaker
-hårddisk N hard drive , hard disk
-USB-minne N USB memory stick
-lagra V store
-ladda V load
-översätta V translate
-skräpsamla V garbage-collect
-skräpsamling N garbage collection
-register N register
+installera	V install
+surfplatta	N tablet
+datavetenskap , datalogi	N computer science
+textanalys	N text analysis
+visualisering	N visualization
+animering	N animation
+interaktiv	A interactive
+grafisk	A graphical
+maskininlärning	N machine learning
+data	N data
+artificiell intelligens , AI	N artificial intelligence , AI
+interpretator , tolk	N interpreter
+texteditor	N text editor
+kommandoterminal , shell	N shell
+fil	N file
+köra , exekvera	V run , execute
+öppen källkod	N open source
+mjukvara	N software
+webb	N web
+uttryck	N expression
+sats	N statement
+evaluera , utvärdera	V evaluate
+beräkna	V compute
+värde	N value
+prompt	N prompt
+prioritet	N precedence
+addition	N addition
+multiplikation	N multiplication
+division	N division
+parentes	N parenthesis
+flyttalsdivision	N floating point division
+heltalsdivision	N integer division
+flyttal	N floating point number
+heltal	N integer
+tal	N number
+konkatenering	N concatenation
+sträng	N string
+mellanslag	N space
+fnutt , citationstecken	N quote
+enkelfnutt	N single quote
+dubbelfnutt	N double quote
+skriva ut	V print
+fel	N error
+syntaxfel	N syntax error
+namnfel	N name error
+typfel	N type error
+markör	N cursor
+addera	V add
+grammatik	N grammar
+syntax	N syntax
+semantik	N semantics
+reserverat ord , nyckelord	N reserved word , keyword
+literal	N literal
+numerisk	A numerical
+konstant	N constant
+operator	N operator
+specialtecken	N special character
+tecken	N character
+funktion	N function
+inbyggd	N built-in
+användardefinierad	N user-defined
+bokstav	N letter
+siffra	N digit
+variabel	N variable
+namn , indentifierare	N name , identifier
+tilldelning	N assignment
+tilldelningssats	N assignment statement , assignment
+definiera	V define
+parameter	N parameter
+argument	N argument
+anropa	N call
+återanvändbar	A reusable
+kommentar	N comment
+input , inmatning	N input
+användare	N user
+importera	V import
+bibliotek	N library
+diagram	N diagram
+påskägg	N Easter egg
+for-sats , for-loop	N for loop
+lista	N list
+element	N element
+indentering	N indentation
+oändlig loop	N infinite loop
+spaghettikod	N spaghetti code
+villkor	N condition
+sann	N true
+strukturerad	N structured
+döda	V kill
+grammatikregel	N grammar rule
+block	N block
+kodelement	N code element
+kod	N code
+dokumentation	N documentation
+layout-regel	N layout rule
+källspråk	N source language
+maskinspråk	N machine language
+kompilator	N compiler
+utrustning	N equipment
+tangentbord	N keyboard
+kamera	N camera
+mus	N mouse
+mikrofon	N microphone
+arbetsminne , primärminne , RAM	N main memory , Random Access Memory , RAM
+skärm	N monitor , screen
+skrivare	N printer
+högtalare	N loudspeaker
+hårddisk	N hard drive , hard disk
+USB-minne	N USB memory stick
+lagra	V store
+ladda	V load
+översätta	V translate
+skräpsamla	V garbage-collect
+skräpsamling	N garbage collection
+register	N register
 
 
 # 2
-koda V code
-analysera V analyse , analyze
-testa V test
-modulär A modular
-testfall N test case
-avlusning N debugging
-avlusa V debug
-bugg N bug
-underhåll N maintenance
-underhålla V maintain
-rad N line
-versionskontroll N version control
-moln N cloud
-katalog , mapp N directory
-abstraktion N abstraction
-process N process
-kommandorad N comman line
-skript N script
-magiskt tal N magic number
-ingångsvärde N input value
-precision N precision
-felhantering N error handling
-felmeddelande N error message
-villkorssats N conditional statement
-modul N module
-programmodul N program module
-returnera V return
-returvärde N return value
-rest N remainder
-undantag N exception
-attackerare N attacker
-attack N attack
-kodinjektion N code injection
-säkerhetslucka N security hole
-sidoeffekt N side effect
-ren funktion N pure function
-räckvidd , scope N scope
-lokal N local
-global N global
-lokal variabel N local variable
-global variabel N global variable
-nästlad N nested
-tillstånd N state
-imperativ A imperative
-funktionell A functional
-objektorienterad A object-oriented
-statiskt typad A statically typed
-dynamiskt typad A dynamically typed
-statisk typning N static typing
-dynamisk typning N dynamic typing
-klass N class
-objekt N object
+koda	V code
+analysera	V analyse , analyze
+testa	V test
+modulär	A modular
+testfall	N test case
+avlusning	N debugging
+avlusa	V debug
+bugg	N bug
+underhåll	N maintenance
+underhålla	V maintain
+rad	N line
+versionskontroll	N version control
+moln	N cloud
+katalog , mapp	N directory
+abstraktion	N abstraction
+process	N process
+kommandorad	N comman line
+skript	N script
+magiskt tal	N magic number
+ingångsvärde	N input value
+precision	N precision
+felhantering	N error handling
+felmeddelande	N error message
+villkorssats	N conditional statement
+modul	N module
+programmodul	N program module
+returnera	V return
+returvärde	N return value
+operativsystem	N operating system
+rest	N remainder
+undantag	N exception
+attackerare	N attacker
+attack	N attack
+kodinjektion	N code injection
+säkerhetslucka	N security hole
+sidoeffekt	N side effect
+ren funktion	N pure function
+räckvidd , scope	N scope
+lokal	N local
+global	N global
+lokal variabel	N local variable
+global variabel	N global variable
+nästlad	N nested
+tillstånd	N state
+imperativ	A imperative
+funktionell	A functional
+objektorienterad	A object-oriented
+statiskt typad	A statically typed
+dynamiskt typad	A dynamically typed
+statisk typning	N static typing
+dynamisk typning	N dynamic typing
+klass	N class
+objekt	N object
 
 # 3
-avrundning N rounding
-konversion N conversion
-representation N representation
-absolutbelopp N absolute value
-potens , exponentiering N exponentiation
-delare N divisor
-decimaldel N decimal part
-avrunda V round
-signifikant siffra N significant digit
-decimalpunkt N decimal point
-mantissa N mantissa
-exponent N exponent
-bas N basis
-talsystem N numeral system
-position N position
-potens N power
-jämn A even
-udda A odd
-bit N bit
-byte N byte
-ord N word
-ordlängd N word length
-fakultet N factorial
-kvadratrot N square root
-andragradsekvation N quadratic equation
-lösning N solution
-diskriminant N discriminant
-ackumulator N accumulator
-tabulatortecken N tab character
-tabell N table
-egenskapsbaserad testning N property-based testing
-slumpmässig N random
-pythagoreisk A Pythagorean
-trippel N triple
-tuppel N tuple
-generera V generate
+avrundning	N rounding
+konversion	N conversion
+representation	N representation
+absolutbelopp	N absolute value
+potens , exponentiering	N exponentiation
+delare	N divisor
+decimaldel	N decimal part
+avrunda	V round
+signifikant siffra	N significant digit
+decimalpunkt	N decimal point
+mantissa	N mantissa
+exponent	N exponent
+bas	N basis
+talsystem	N numeral system
+position	N position
+potens	N power
+jämn	A even
+udda	A odd
+bit	N bit
+byte	N byte
+ord	N word
+ordlängd	N word length
+fakultet	N factorial
+kvadratrot	N square root
+andragradsekvation	N quadratic equation
+lösning	N solution
+diskriminant	N discriminant
+ackumulator	N accumulator
+tabulatortecken	N tab character
+tabell	N table
+egenskapsbaserad testning	N property-based testing
+slumpmässig	N random
+pythagoreisk	A Pythagorean
+trippel	N triple
+tuppel	N tuple
+generera	V generate
 
+
+# 4
+framkalla	V develop
+nyradstecken	N newline character
+specialtecken	N special character
+ASCII-kod	N ASCII code
+attribut	N attribute
+metod	N method
+dator-människainteraktion	N human-computer interaction
+justera	V justify
+formatera	V format
+formatering	V formatting
+slice , skiva	N slice
+muterbar	A mutable
+icke-muterbar	A non-mutable
+skräp	N garbage
+referera	V refer
+skapa	V create
+skräpsamla	V garbage-collect
+muterbarhet	N mutability
+effektiv	A efficient
+ineffektiv	A inefficient
+optimering	N optimization
+element	N element
+öppna	V open
+stänga	V close
+trädstruktur	N tree structure
+träd	N tree
+arbetskatalog	N working directory
 
 
 

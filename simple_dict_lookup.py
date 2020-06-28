@@ -1,11 +1,12 @@
+# a very simple dictionary builder and lookup loop
 import sys
 
 def mkDict(lines):
     dict = {}
     for line in lines:
-        tabs = line.split('\t')
-        if len(tabs) == 2:
-            dict[tabs[0]] = tabs[1]
+        fields = line.split(';')
+        if len(fields) >= 2:
+            dict[fields[0].strip()] = fields[1].strip()
     return dict
 
 def readDict(filename):

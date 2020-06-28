@@ -1,0 +1,252 @@
+# 1
+programmering ; programming ; N
+dator ; computer ; N
+datasystem , mjukvarusystem ; software system ; N
+programmerare ; programmer ; N
+programmera ; program ; V
+program ; program ; N
+algoritm ; algorithm ; N
+instruktionsföljd ; sequence of instructions ; N
+programspråk , programmeringsspråk ; programming language ; N
+språk ; language ; N
+kringutrustning ; peripheral ; N
+installera ; install ; V
+surfplatta ; talet ; N
+datavetenskap , datalogi ; computer science ; N
+textanalys ; text analysis ; N
+visualisering ; visualization ; N
+animering ; animation ; N
+interaktiv ; interactive ; A
+grafisk ; graphical ; A
+maskininlärning ; machine learning ; N
+data ; data ; N
+artificiell intelligens , AI ; artificial intelligence , AI ; N
+interpretator , tolk ; interpreter ; N
+texteditor ; text editor ; N
+kommandoterminal , shell ; shell ; N
+fil ; file ; N
+köra , exekvera ; run , execute ; V
+öppen källkod ; open source ; N
+mjukvara ; software ; N
+webb ; web ; N
+uttryck ; expression ; N
+sats ; statement ; N
+evaluera , utvärdera ; evaluate ; V
+beräkna ; compute ; V
+värde ; value ; N
+prompt ; prompt ; N
+prioritet ; precedence ; N
+addition ; addition ; N
+multiplikation ; multiplication ; N
+division ; division ; N
+parentes ; parenthesis ; N
+flyttalsdivision ; floating point division ; N
+heltalsdivision ; integer division ; N
+flyttal ; floating point number ; N
+heltal ; integer ; N
+tal ; number ; N
+konkatenering ; concatenation ; N
+sträng ; string ; N
+mellanslag ; space ; N
+fnutt , citationstecken ; quote ; N
+enkelfnutt ; single quote ; N
+dubbelfnutt ; double quote ; N
+skriva ut ; print ; V
+fel ; error ; N
+syntaxfel ; syntax error ; N
+namnfel ; name error ; N
+typfel ; type error ; N
+markör ; cursor ; N
+addera ; add ; V
+grammatik ; grammar ; N
+syntax ; syntax ; N
+semantik ; semantics ; N
+reserverat ord , nyckelord ; reserved word , keyword ; N
+literal ; literal ; N
+numerisk ; numerical ; A
+konstant ; constant ; N
+operator ; operator ; N
+specialtecken ; special character ; N
+tecken ; character ; N
+funktion ; function ; N
+inbyggd ; built-in ; N
+användardefinierad ; user-defined ; N
+bokstav ; letter ; N
+siffra ; digit ; N
+variabel ; variable ; N
+namn , indentifierare ; name , identifier ; N
+tilldelning ; assignment ; N
+tilldelningssats ; assignment statement , assignment ; N
+definiera ; define ; V
+parameter ; parameter ; N
+argument ; argument ; N
+anropa ; call ; N
+återanvändbar ; reusable ; A
+kommentar ; comment ; N
+input , inmatning ; input ; N
+användare ; user ; N
+importera ; import ; V
+bibliotek ; library ; N
+diagram ; diagram ; N
+påskägg ; Easter egg ; N
+for-sats , for-loop ; for loop ; N
+lista ; list ; N
+element ; element ; N
+indentering ; indentation ; N
+oändlig loop ; infinite loop ; N
+spaghettikod ; spaghetti code ; N
+villkor ; condition ; N
+sann ; true ; N
+strukturerad ; structured ; N
+döda ; kill ; V
+grammatikregel ; grammar rule ; N
+block ; block ; N
+kodelement ; code element ; N
+kod ; code ; N
+dokumentation ; documentation ; N
+layout-regel ; layout rule ; N
+källspråk ; source language ; N
+maskinspråk ; machine language ; N
+kompilator ; compiler ; N
+utrustning ; equipment ; N
+tangentbord ; keyboard ; N
+kamera ; camera ; N
+mus ; mouse ; N
+mikrofon ; microphone ; N
+arbetsminne , primärminne , RAM ; main memory , Random Access Memory , RAM ; N
+skärm ; monitor , screen ; N
+skrivare ; printer ; N
+högtalare ; loudspeaker ; N
+hårddisk ; hard drive , hard disk ; N
+USB-minne ; USB memory stick ; N
+lagra ; store ; V
+ladda ; load ; V
+översätta ; translate ; V
+skräpsamla ; garbage-collect ; V
+skräpsamling ; garbage collection ; N
+register ; register ; N
+
+
+# 2
+koda ; code ; V
+analysera ; analyse , analyze ; V
+testa ; test ; V
+modulär ; modular ; A
+testfall ; test case ; N
+avlusning ; debugging ; N
+avlusa ; debug ; V
+bugg ; bug ; N
+underhåll ; maintenance ; N
+underhålla ; maintain ; V
+rad ; line ; N
+versionskontroll ; version control ; N
+moln ; cloud ; N
+katalog , mapp ; directory ; N
+abstraktion ; abstraction ; N
+process ; process ; N
+kommandorad ; comman line ; N
+skript ; script ; N
+magiskt tal ; magic number ; N
+ingångsvärde ; input value ; N
+precision ; precision ; N
+felhantering ; error handling ; N
+felmeddelande ; error message ; N
+villkorssats ; conditional statement ; N
+modul ; module ; N
+programmodul ; program module ; N
+returnera ; return ; V
+returvärde ; return value ; N
+operativsystem ; operating system ; N
+rest ; remainder ; N
+undantag ; exception ; N
+attackerare ; attacker ; N
+attack ; attack ; N
+kodinjektion ; code injection ; N
+säkerhetslucka ; security hole ; N
+sidoeffekt ; side effect ; N
+ren funktion ; pure function ; N
+räckvidd , scope ; scope ; N
+lokal ; local ; N
+global ; global ; N
+lokal variabel ; local variable ; N
+global variabel ; global variable ; N
+nästlad ; nested ; N
+tillstånd ; state ; N
+imperativ ; imperative ; A
+funktionell ; functional ; A
+objektorienterad ; object-oriented ; A
+statiskt typad ; statically typed ; A
+dynamiskt typad ; dynamically typed ; A
+statisk typning ; static typing ; N
+dynamisk typning ; dynamic typing ; N
+klass ; class ; N
+objekt ; object ; N
+
+# 3
+avrundning ; rounding ; N
+konversion ; conversion ; N
+representation ; representation ; N
+absolutbelopp ; absolute value ; N
+potens , exponentiering ; exponentiation ; N
+delare ; divisor ; N
+decimaldel ; decimal part ; N
+avrunda ; round ; V
+signifikant siffra ; significant digit ; N
+decimalpunkt ; decimal point ; N
+mantissa ; mantissa ; N
+exponent ; exponent ; N
+bas ; basis ; N
+talsystem ; numeral system ; N
+position ; position ; N
+potens ; power ; N
+jämn ; even ; A
+udda ; odd ; A
+bit ; bit ; N
+byte ; byte ; N
+ord ; word ; N
+ordlängd ; word length ; N
+fakultet ; factorial ; N
+kvadratrot ; square root ; N
+andragradsekvation ; quadratic equation ; N
+lösning ; solution ; N
+diskriminant ; discriminant ; N
+ackumulator ; accumulator ; N
+tabulatortecken ; tab character ; N
+tabell ; table ; N
+egenskapsbaserad testning ; property-based testing ; N
+slumpmässig ; random ; N
+pythagoreisk ; Pythagorean ; A
+trippel ; triple ; N
+tuppel ; tuple ; N
+generera ; generate ; V
+
+
+# 4
+framkalla ; develop ; V
+nyradstecken ; newline character ; N
+specialtecken ; special character ; N
+ASCII-kod ; ASCII code ; N
+attribut ; attribute ; N
+metod ; method ; N
+dator-människainteraktion ; human-computer interaction ; N
+justera ; justify ; V
+formatera ; format ; V
+formatering ; formatting ; N
+slice , skiva ; slice ; N
+muterbar ; mutable ; A
+icke-muterbar ; non-mutable ; A
+skräp ; garbage ; N
+referera ; refer ; V
+skapa ; create ; V
+skräpsamla ; garbage-collect ; V
+muterbarhet ; mutability ; N
+effektiv ; efficient ; A
+ineffektiv ; inefficient ; A
+optimering ; optimization ; N
+element ; element ; N
+öppna ; open ; V
+stänga ; close ; V
+trädstruktur ; tree structure ; N
+träd ; tree ; N
+arbetskatalog ; working directory ; N
+

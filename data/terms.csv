@@ -238,6 +238,8 @@ icke-muterbar ; non-mutable ; A
 skräp ; garbage ; N
 referera ; refer ; V
 skapa ; create ; V
+byta ; change ; V
+ändra ; change ; V
 skräpsamla ; garbage-collect ; V
 muterbarhet ; mutability ; N
 effektiv ; efficient ; A
@@ -249,4 +251,88 @@ stänga ; close ; V
 trädstruktur ; tree structure ; N
 träd ; tree ; N
 arbetskatalog ; working directory ; N
+
+# 5
+dictionary ; dictionary ; N
+statistisk ; statistical ; A
+datastructur ; data structure ; N
+slå upp ; look up ; V
+förekomst ; occurrence ; N
+antal ; number ; N
+ingång ; entry ; N
+kolumn ; column ; N
+kalkylark ; spreadsheet ; N
+relationsdatabas ; relational database ; N
+komprimera ; compress ; N
+semikolon ; semicolon ; N
+nyckel ; key ; N
+rad ; line ; N
+fält ; field ; N
+krascha ; crash ; V
+source ; källa ; N
+target ; mål ; N
+indexera ; index ; V
+sortera ; sort ; V
+sortering ; sorting ; N
+stigande ; ascending ; A
+fallande ; descending ; A
+stoppord ; stop word ; N
+medelvärde ; mean , average ; N
+median ; median ; N
+standardavvikelse ; standard deviation ; N
+distribution , fördelning ; distribution ; N
+frekvens ; frequency ; N
+lag ; law ; N
+cosinus-likhet ; cosine similarity ; N
+vinkel ; angle ; N
+tillämpning ; application ; N
+klassificering ; classification ; N
+rekommendation ; recommendation ; N
+identifiering ; identification ; N
+lemmatisering ; lemmatization ; N
+fullformslexikon ; full form lexicon ; N
+lemma , grundform ; lemma , base form ; N
+stavfel ; spelling error ; N
+
+#6
+sårbarhet ; vulnerability ; N
+rekursiv ; recursive ; V
+giltig ; valid ; A
+läcka ; leak ; V
+exception ; undantag ; N
+produktion ; production ; N
+användarvänlig ; user-friendly ; A
+lokalisering ; localization ; N
+boolesk ; boolean ; A
+kontroll ; control ; N
+kontrollstruktur ; control structure ; N
+sekventiell ; sequential ; A
+flöde ; flow ; N
+flödesdiagram ; flow diagram ; N
+konjunktion ; conjunction ; N
+disjunktion ; disjunction ; N
+negation ; negation ; N
+sann ; true ; A
+falsk ; false ; A
+jämförelse ; comparison ; N
+jämföra ; compare ; V
+sanningsvärde ; truth value ; N
+sanningstabell ; truth table ; N
+algebra ; algebra ; N
+idiom ; idiom ; N
+räknare ; counter ; N
+sentinel ; sentinel ; N
+validera ; validate ; V
+avbryta ; break ; V
+fullständighet ; completeness ; N
+fullständig , komplett ; complete ; A
+maskin ; machine ; N
+högnivåspråk ; high level language ; N
+lågnivåspråk ; low level language ; N
+pythonic ; pythonic ; A
+stilguide ; style guide ; N
+listkomprehension ; list comprehension ; N
+mängd ; set ; N
+
+
 

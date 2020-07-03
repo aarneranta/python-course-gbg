@@ -1,3 +1,6 @@
+# datatermer för Python-kursen
+# använd ../dict_lookup.py för att slå upp termer
+
 # 1
 programmering ; programming ; N
 dator ; computer ; N
@@ -255,7 +258,8 @@ arbetskatalog ; working directory ; N
 # 5
 dictionary ; dictionary ; N
 statistisk ; statistical ; A
-datastructur ; data structure ; N
+datastruktur ; data structure ; N
+struktur ; structure ; N
 slå upp ; look up ; V
 förekomst ; occurrence ; N
 antal ; number ; N

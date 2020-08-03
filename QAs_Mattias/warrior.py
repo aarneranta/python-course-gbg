@@ -9,10 +9,11 @@ class Warrior:
     def attack(self, opponent):
         print(self.name, 'attacked', opponent.name+'!')
         opponent.health -= self.damage
-        print(opponent.name, 'has', opponent.health, 'health.')
         if opponent.health <= 0:
             del opponent.health
             print(opponent.name, 'died.')
+        else:
+            print(opponent.name, 'has', opponent.health, 'health.')
         print('_' * 20)
 
     # Set health to an appropriate value

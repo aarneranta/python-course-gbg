@@ -1,4 +1,6 @@
 class Warrior:
+    # Note: if you want protected or private variables like in Java or C++, use single underscore '_' or double underscore '__'
+    # Example: 'self._name = name' creates a protected variable
     def __init__(self, name, health=100, damage=10, potions=2):
         self.name = name
         self.health = health

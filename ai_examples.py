@@ -1,5 +1,5 @@
-# http://www.paulgraham.com/spam.html
-# https://course.elementsofai.com/se/3/3
+# inspired by http://www.paulgraham.com/spam.html
+# but a simplified version as in https://course.elementsofai.com/se/3/3
 
 DEFAULT_PROB = 0.00001
 
@@ -33,9 +33,19 @@ class SpamFilter:
         prob = ratio / (ratio + 1)
         return(prob)
 
+# to read files from enron-spam data, which has Latin encoding
+# http://www2.aueb.gr/users/ion/data/enron-spam/
+def getLatinWords(file):
+     ham = open(file,encoding = "ISO-8859-1")
+     ws = []
+     for lines in ham:
+         for w in lines.split():
+             ws.append(w)
+     return ws
 
+    
 ##############
-## regression
+## regression by using gradiet descent, in one variable
 ##############
 
 def meanSquareError(prediction,examples):
@@ -78,7 +88,7 @@ def descent(L,epochs,examples):
         
     return (c,m)
 
-def loadtxt(file):  # order of pairs in chirps.txt different from doc
+def loadtxt(file):  # to load for instance chirps.txt from Lab3, or the same format
     lines = open(file)
     M = []
     for line in lines:

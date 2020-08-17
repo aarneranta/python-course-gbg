@@ -24,12 +24,18 @@ def readDict(filename,src,tgt):
 
 
 def main():
-    filename = sys.argv[1]
+
     if len(sys.argv) > 2:
+        filename = sys.argv[1]
         src,tgt = sys.argv[2].split(',')
         dict = readDict(filename,int(src),int(tgt))
-    else:
+    elif len(sys.argv) == 2:
+        filename = sys.argv[1]
         dict = readDict(filename,0,1)
+    else:
+        print("dictionary lookup from ;-separated files")
+        print("usage: dict_lookup <dictfile.csv> <from_column,to_column>?")
+        return
     prompt = "ange sökord+enter, sluta med enter> "
     query = input(prompt)
     while query:
@@ -37,7 +43,8 @@ def main():
             print(trans)
         query = input(prompt)
 
-# main()
+if __name__ == "__main__":
+    main()
 
 
 ##############

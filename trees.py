@@ -1,10 +1,23 @@
 class Tree:
     def __init__(self,node,subtrees):
-        self.node = node
+        self.root = node
         self.subtrees = subtrees
 
     def getParts(self):
-        return self.node, self.subtrees
+        return self.root, self.subtrees
+
+def maximum(xs):
+    m = 0
+    for x in xs[1:]:
+        m = max(m,x)
+    return m
+
+def depth(tree):
+    (n,ts) = tree.getParts()
+    if ts:
+        return 1 + maximum([depth(t) for t in ts])
+    else:
+        return 1
 
 def atom(a):
     return Tree(a,[])
@@ -63,7 +76,7 @@ def jvm(tree):
         elif f == "+":
             return "iadd"
         else:
-            return "ldc " + str(f)
+            return "bipush " + str(f)
         
     instrs = map(instr,postfix(tree))
         
@@ -76,7 +89,8 @@ def main():
     print(postfix(t))
     print(jvm(t))
 
-main()
+if __name__ == '__main__':
+    main()
 
 
 

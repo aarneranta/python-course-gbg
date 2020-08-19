@@ -4,7 +4,6 @@ from matplotlib import pyplot as plt
 
 
 def create_noisy_data(x_data, r):
-    # Fix random seed for reproducibility
     seed(2)
     return array([x + r * random(1) - r/2 for x in x_data])
 
@@ -24,20 +23,20 @@ data = create_noisy_data(x_data, r)
 # Remember to view the image in full screen
 plt.figure(1)
 for i in range(1, 16):
-    coefficients = polyfit(x_data, data, deg=i)[::-1]
-    # [::-1] is one way of reversing a list
-    fitted_data = polynomial(coefficients, x_data)
+    coefficient = polyfit(x_data, data, deg=i)[::-1]
+    fitted_data = polynomial(coefficient, x_data)
     mse = mean(square(fitted_data - data))
 
-    # To get a higher resolution for the polynomial plot
-    x_data_fit = linspace(lower, upper, points*4)
-    fitted_data = polynomial(coefficients, x_data_fit)
+    # To get a higher resolution for the polynomial
+    x_data_fit = linspace(lower, upper, points * 4)
+    fitted_data = polynomial(coefficient, x_data_fit)
 
-    # At high degrees, we will get a warning. This is due to overfitting!
+    # At higher, we will get a warning. This is due to overfitting!
     plt.subplot(3, 5, i)
     plt.plot(x_data, data, 'rx', label='Original data')
     plt.plot(x_data_fit, fitted_data, label='Fitted data')
     plt.title("Degree: {}".format(i) + ", MSE: {:.2f}".format(mse))
     plt.legend(loc=0)
     plt.grid()
+
 plt.show()

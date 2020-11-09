@@ -10,15 +10,16 @@ def mkDict(lines):
     lines.close()
     return dict
 
+def readDict(filename):
+    file = open(filename)
+    return mkDict(file)
+
 def readDict1(filename):
     file = open(filename)
     lines = file.readlines()
     file.close()
     return mkDict(lines)
 
-def readDict(filename):
-    file = open(filename)
-    return mkDict(file)
 
 def main():
     filename = sys.argv[1]

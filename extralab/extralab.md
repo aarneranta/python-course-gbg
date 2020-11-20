@@ -67,7 +67,7 @@ A more tricky part is the conversion of arbitrary expressions (of class `Exp`) t
 ```
 <exp> ::= <int>
 <exp> ::= x
-<exp> ::= ( <exp> op <exp>)
+<exp> ::= ( <exp> op <exp> )
 <exp> ::= ( <exp> ^ <int> )
 <op>  ::= + | - | *
 <int> ::= 0 | 1 | 2 | ... | 123 | ...
@@ -130,5 +130,29 @@ The `exp2polynom()` function itself is a recursive function that can call helper
 
 ### Parsing and printing
 
+Parsing consists of a *lexer* and a *recursive descent parser*
+```
+def lex(string): # returns a list of tokens
 
-  
+def parse(tokens): # returns an object of class Exp
+```
+We will write more on how these work...
+
+Printing for both Exp and polynomials...
+
+
+### Putting it all together
+
+A test function that takes an expression as input and shows a few things:
+```
+>>> test()
+enter expression> ((x-10)^4)
+polynomial: 10000 - 4000x + 600x^2 - 40x^3 + x^4
+first derivative: -4000 + 1200x - 120x^2 + 4x^3
+second derivative: 1200 - 240x + 12x^2
+```
+This is possible if you have completed both tasks.
+
+We will provide a test file to help with the internals...
+
+

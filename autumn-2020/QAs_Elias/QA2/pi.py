@@ -1,7 +1,7 @@
 import random
 import matplotlib.pyplot as plt
 
-#Förklarar sig själv då man ser bilden!
+# Förklarar sig själv då man ser bilden!
 def piDart(shots):
     hit = 0
     for _ in range(shots):
@@ -41,7 +41,7 @@ def piGcd(n):
 
     return (6*n/m)**0.5
 
-def gcd(a, b):
+def gcd(a, b): #https://en.wikipedia.org/wiki/Euclidean_algorithm
     while b != 0:
         a, b = b, a%b
     return a

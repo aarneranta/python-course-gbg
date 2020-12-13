@@ -1,0 +1,280 @@
+Konsekvenser för personer 70 år och äldre av smittskyddsåtgärder mot covid19
+Publicerad: 22 oktober 2020 Uppdaterad: -
+
+Innehåll
+
+Sammanfattning Många olika negativa effekter
+Om publikationen Summary
+Wide range of negative effects Bakgrund Syfte och mål
+Frågeställningar Metod
+Rekommendationens effekt på antal fall och sjukvårdens belastning Psykiska och fysiska konsekvenser av pandemin och sätt att minska dem Resultat Rekommendationens effekt på antal fall och sjukvårdens belastning under vår och sommar 2020 Psykiska och fysiska konsekvenser av pandemin Åtgärder för att minska psykiska och fysiska konsekvenser av pandemin Troliga negativa konsekvenser på sikt Diskussion Motverka de negativa konsekvenserna Slutsatser Referenser* Bilagor
+
+NNN3 NNN3 NNN4 NNN5 NNN5 NNN6 NNN8 NNN8 NNN9 NNN9 NNN9 NN1N1 NNN
+11
+NN1N3 NN1N5 NN1N5 NN1N7 NN1N7 NN1N9 NN2N0 NN2N1
+
+Observera att det är möjligt att ladda ner hela eller delar av en publikation. Denna pdf/utskrift behöver därför inte vara komplett. Hela publikationen och den senaste versionen hittar ni på www.folkhalsomyndigheten.se
+
+2 (21)
+
+Sammanfattning
+Risken för allvarlig sjukdom och död i covid-19 ökar med åldern. Därför har personer som är 70 år och äldre sedan i mars 2020 rekommenderats att begränsa sina sociala kontakter och undvika platser där många personer samlas. Analyser tyder på att rekommendationen har varit betydelsefull genom att minska antalet fall av allvarlig sjukdom och död i covid-19 bland personer 70 år och äldre. Det epidemiologiska läget har förbättrats under sommaren, men vi ser en viss ökad smittspridning i framför allt vissa regioner. Analyser visar att rekommendationerna har lett till sämre psykisk hälsa för vissa grupper och riskerar även att påverka den fysiska hälsan. De negativa konsekvenserna riskerar att förvärras ju längre rekommendationen kvarstår. Det kan också finnas ett uppdämt vårdbehov i gruppen. Detta framgår av internationell forskning, svenska undersökningar, möten med pensionärsorganisationer, intervjuer med organisationer som företräder utrikesfödda och data från 1177 Vårdguiden.
+Många olika negativa effekter
+De som redan var socialt, ekonomiskt och hälsomässigt utsatta mår sämre, och det digitala utanförskapet har blivit tydligare när man inte kan träffas fysiskt. Många personer i gruppen 70 år och äldre känner sig frustrerade och upplever att de särbehandlas på ett stigmatiserande sätt. Saknaden efter sociala sammanhang är stor och stödlinjer får fler samtal från personer som tycker att de inte har något att leva för längre. Oro och ångest har ökat inte minst bland dem som har en psykiatrisk diagnos. Med pandemin följer negativa effekter särskilt för personer 70 år och äldre, både med avseende på risken för sjukdom och utifrån konsekvenserna av olika åtgärder. Förebyggande insatser behöver nu intensifieras och den digitala kompetensen öka bland äldre. Litteraturen visar att god och tillförlitlig information skyddar mot oro, och det finns rekommendationer om åtgärder som individer och myndigheter kan göra för att motverka negativa konsekvenser av fysisk isolering. Exempelvis underlättar det om begränsningar rörande fysisk isolering kan avgränsas i tid.
+3 (21)
+
+Om publikationen
+Covid-19 pandemin har inneburit förändringar i vardagen för många, särskilt för personer över 70 år. Förutom ökad risk för död till följd av sjukdomen har äldre också rekommenderats att begränsa sin vardag mer än yngre åldersgrupper. I mars 2020 infördes en rekommendation om att personer 70 år och äldre ska begränsa sina sociala kontakter och undvika platser där många personer samlas. Rekommendationen infördes för att skydda äldre personer mot smitta av covid-19, men den riskerar också att bidra till ökad fysisk och psykisk ohälsa, på både kort och lång sikt. Denna rapport bidrar med kunskap om hur många allvarliga sjukdomsfall och dödsfall i covid-19 som kunnat undvikas genom rekommendationen men också om kunskap om konsekvenserna för både den psykiska och den fysiska hälsan. Detta blir viktigt i det fortsätta arbetet med att förebygga och minska negativa konsekvenser till följd av covid-19 samt som underlag för att eventuellt uppdatera smittskyddsåtgärden. Kunskapssammanställningen har genomförts i ett myndighetsövergripande uppdrag som letts av Anna Bessö, avdelningschef vid avdelningen för Livsvillkor och levnadsvanor. Folkhälsomyndigheten Johan Carlson Generaldirektör
+4 (21)
+
+Summary
+The risk of COVID-19 causing serious illness or death increases with age. For this reason, a general recommendation has been in place since March 2020 that people of 70 years of age and older should limit their physical contacts and avoid places where people gather. Analyses indicate that this recommendation has had a significant impact by reducing the number of cases of serious illness and death due to COVID-19 among this age group. While the epidemiological situation has improved over the summer, we are now seeing an increase in infection rates, particularly in certain regions. Analyses also show that the current recommendations have resulted in a decline in mental health among certain groups and may even have an adverse effect on physical health. These negative consequences are likely to worsen the longer the recommendations remain in place. There may also be a considerable backlog of healthcare needs among this group. This has been analysed through international research, Swedish surveys, meetings with pensioners' organisations and organisations representing the interests of foreign-born citizens, as well as data from the healthcare helpline 1177 Vårdguiden.
+Wide range of negative effects
+Those who were already vulnerable due to their socioeconomic or health situation have generally felt worse, and digital exclusion has become even more pronounced when individuals are unable to meet others physically. Many of those aged 70 years or older have a sense of frustration and feel that they are being singled out in a stigmatising manner. There is a pronounced lack of social context and support lines are receiving more calls from people who feel that they no longer have anything to live for. Concern and anxiety have increased, not least among those with an existing psychiatric diagnosis. The negative effects of the pandemic are especially evident for those aged 70 years or older, both with regard to the risk of illness and the consequences of the various measures being implemented. We now need to step up our preventive efforts and increase digital competence among older people. The literature shows us that good and reliable information protects against anxiety. There are also recommendations available on the measures that individuals and public authorities can take to alleviate the negative consequences of physical isolation for example, it helps if a time limit can be placed on physical isolation.
+5 (21)
+
+Bakgrund
+Sedan mars 2020 pågår en pandemi i vårt samhälle. Covid-19 har förändrat vardagen för många och de äldre har drabbats särskilt hårt. Det har visat sig att hög ålder är en riskfaktor för allvarlig sjukdom och död, även om man är frisk och inte har andra sjukdomar (1). Ju äldre man är, desto större är risken för allvarlig sjukdom och död, och den risken ökar ytterligare om man dessutom har vissa andra sjukdomar. Studier lyfter också betydelsen av hälsotillstånd (2, 3). Män har högre risk än kvinnor att bli allvarligt sjuka och behöva intensivvård. De har dessutom högre risk än kvinnor att dö, se figur 1 som visar antal dödsfall bland personer med bekräftad covid-19infektion per 1000 invånare uppdelat på kön och ålder.
+Figur 1. Antal avlidna per 1000 invånare med bekräftad covid-19-infektion uppdelat på kön och ålder, baserat på data till och med 12 oktober 2020, Sverige.
+Källa: SmiNet
+Den 16 mars 2020 införde Folkhälsomyndigheten en rekommendation om att personer 70 år och äldre ska begränsa sina sociala kontakter och undvika platser där många personer samlas. Rekommendationen har varit en av grundpelarna i den svenska strategin som har som mål att minimera dödlighet och sjuklighet i befolkningen samt minimera övriga negativa konsekvenser för individen och samhället, bland annat för att sjukvårdens resurser ska räcka till (4). Rekommendationen införlivades den 1 april i de allmänna råd (5) som också anger att vi alla ska hålla avstånd till andra, undvika större sociala sammanhang, stanna hemma vid symtom och tvätta händerna regelbundet och noggrant. Råden innehåller även särskilda rekommendationer till verksamhetsutövare. Figur 2 visar antalet bekräftade fall per 100 000 personer i olika åldersgrupper, över tid. Vecka
+6 (21)
+
+16 var antalet som högst i gruppen 80 år och äldre och det har därefter sjunkit. En stor del av fallen i de äldsta åldersgrupperna var på Särskilda boenden för äldre (SÄBO). Vecka 16 upptäcktes över 800 fall på SÄBO (alla åldersgrupper) av totalt cirka 4000 fall i alla åldersgrupper, Vecka 35 upptäcktes ungefär 10 fall på SÄBO av totalt cirka 1700 fall. I åldersgruppen 7079 år var fallen flest vecka 14­16 för att sedan långsamt avta. En delförklaring till de stora förändringarna över tid i fördelning av fall mellan olika åldersgrupper är att testningen förändrats från att från den 12 mars enbart fokusera på allvarliga fall samt fall bland hälso- och sjukvårdspersonal till att från juni även inkludera fall med milda symtom.
+Figur 2. Bekräftade diagnosticerade sjukdomsfall per vecka och åldersgrupp (fall per 100 000 invånare), Sverige.
+Källa: SmiNet
+Rekommendationen har införts för att skydda äldre personer mot smitta, men den riskerar att bidra till ökad fysisk och psykisk ohälsa, på både kort och lång sikt. Den här rapporten presenterar kunskap om hur många allvarliga sjukdomsfall och dödsfall som kunnat undvikas genom rekommendationen, och om konsekvenserna för både den psykiska och den fysiska hälsan. Smittspridningen har gått ner i Sverige sedan i våras, med en minskad belastning på hälso- och sjukvården av covid-19-relaterade fall. Detta kan förändras snabbt, men trots viss ökning i några regioner i Sverige är nivån relativt låg nationellt jämfört med situationen under våren. Därför vill Folkhälsomyndigheten nu väga de negativa effekterna av de restriktiva råden mot smittrisken och risken för allvarlig sjukdom för gruppen 70 år och äldre, för att eventuellt anpassa rekommendationerna.
+7 (21)
+
+Syfte och mål
+Syftet med den här rapporten är att bedöma konsekvenserna av de covid-19 relaterade smittskyddsåtgärderna för personer som är 70 år eller äldre. Bedömningen ska ligga till grund för ett ställningstagande till om rekommendationen ska fortsätta gälla som tidigare, alternativt tas bort eller justeras på något sätt baserat på nuläget. Målet är att ha väl avvägda, vetenskapligt grundade rekommendationer som skyddar liv och hälsa och att begränsa de negativa konsekvenserna.
+Frågeställningar
+1. Hur har rekommendationen påverkat antalet sjukdomsfall och dödsfall med covid-19 och sjukvårdens belastning fram till slutet av augusti?
+2. Vilka är de psykiska och fysiska konsekvenserna av rekommendationen för gruppen 70 år och äldre?
+3. Vad kan göras för att mildra de negativa psykiska och fysiska konsekvenserna?
+8 (21)
+
+Metod
+En mängd olika datakällor och metoder har använts för att belysa frågeställningarna. De presenteras kortfattat nedan, i relation till den frågeställning som avses, och beskrivs närmare i bilaga 1 och 2a och 2b.
+Rekommendationens effekt på antal fall och sjukvårdens belastning
+Data från databasen SmiNet har använts för att analysera frågeställningen om antalet sjukdomsfall och dödsfall med covid-19 (avlidna diagnostiserade med covid-19 de senaste 30 dagarna innan dödsfallet), och för att modellera scenarier med olika kontaktintensitet. Folkhälsomyndigheten har gjort två analyser för att försöka kvantifiera effekten av rekommendationen om att begränsa nära kontakter bland personer 70 år och äldre, med hjälp av modellering.
+I den första analysen modelleras tre scenarier, baslinje och två scenarier där en ökad kontaktintensitet antas, som simulerar antalet rapporterade fall av covid-19 under våren och sommaren 2020. Modelleringen fokuserar på hemmaboende personer 70 år och äldre, med eller utan stödinsatser i hemmet, som har olika grad av nära kontakter, och baseras på rapporterade fall i SmiNet den 23 februari­30 augusti 2020. I modelleringen ingår samtliga infekterade med covid-19, både rapporterade fall och det så kallade mörkertalet, som här benämns "obekräftade" fall. I steg två studeras hur vården skulle ha påverkats om kontaktintensiteten hade varit högre, i termer av behov av slutenvård och intensivvård under perioden 1 mars till 1 september 2020. I bilaga 1 (Modellering av spridning av covid-19 i gruppen personer 70 år och äldre - effekt av rekommendationen om begränsning av kontakter) finns en utförligare beskrivning av modelleringen.
+Psykiska och fysiska konsekvenser av pandemin och sätt att minska dem
+Flera källor har använts för att analysera frågeställning 2 och 3 om psykiska och fysiska hälsomässiga konsekvenser av rekommendationen samt åtgärder för att minska de negativa konsekvenserna. I bilaga 2a (Psykiska och fysiska konsekvenser av pandemin och sätt att minska dem) finns en utförligare beskrivning för samtliga underlag.
+Forskningslitteraturen om äldre personers fysiska och psykiska hälsa och levnadsvanor under pandemin har granskats och en litteratursammanställning har genomförts, se även bilaga 2b (Sammanfattning av litteraturöversikten samt litteratursökningar).
+Enkätdata från Novus beteendeundersökningar analyserades för att ge svar på hur stor andel i den svenska befolkningen som känner oro för smittan, och i vilken utsträckning man följer rekommendationerna, sett över tid. Dessutom analyserades data från enkäten Hälsorapport som i maj 2020 till stor del handlade om psykisk hälsa och levnadsvanor under coronapandemin.
+Data från Hälsoläge har också analyserats. Det är ett system där Folkhälsomyndigheten har tillgång till information genererad på gruppnivå från de kontakter som tagits med 1177
+9 (21)
+
+Vårdguiden per telefon. För att få information om grupper som vanligtvis inte fångas upp i enkätundersökningar genomfördes dialoger och intervjuer med företrädare för pensionärsorganisationer och ledande personer i organisationer som bistår eller företräder utrikesfödda, och dessutom med två äldre individer med somaliskt ursprung. Vidare kontaktades Norra Stockholms psykiatri, Mottagningen för äldrepsykiatri, för att få deras bild av hur deras patienter mått under rådande restriktioner och under pandemin.
+10 (21)
+
+Resultat
+Avsnittet är uppdelat i fyra delar. Den första behandlar rekommendationens effekt på antal fall och sjukvårdens belastning fram till sista augusti. Den andra delen belyser de psykiska och fysiska konsekvenserna, och den tredje delen beskriver åtgärder som kan göras för att minska dessa psykiska och fysiska konsekvenser av pandemin. Slutligen beskrivs troliga negativa konsekvenser på sikt.
+
+Rekommendationens effekt på antal fall och sjukvårdens belastning under vår och sommar 2020
+Modelleringen visar på att rekommendationen har minskat sjukligheten och dödligheten i covid19 i gruppen 70 år och äldre som bor hemma. Den har också bidragit till att plana ut kurvan för dödlighet och sjuklighet i åldersgruppen, bland de som inte bor i särskilt boende.
+
+Den möjliga effekten av rekommendationen om att gruppen 70 år och äldre uppmanades att begränsa nära kontakter på sjuklighet och dödlighet till följd av covid-19 för personer 70 år och äldre undersöktes genom epidemiologisk modellering där två kontrafaktiska situationer simulerades. Scenario 0 (baslinje) modellerar spridningen med rekommendationen och den kontaktreduktion vi observerat. Vidare modellerades två olika scenarier med antagandet att rekommendationen inte införts under våren och personer 70 år och äldre som bor hemma därmed skulle ha haft fler kontakter, se tabell 1. I första scenariot (scenario 1) antar vi att målgruppen vid borttagen rekommendation träffat hälften av så många som de träffar i vanliga fall jämfört med baslinjen där endast 35 % av de nära kontakterna bibehölls. Detta skulle ge ungefär 4 300 sjukdomsfall till, med uppskattningsvis ytterligare 170 IVA-fall och ytterligare 760 dödsfall. I ett scenario med fler kontakter, som i scenario 2 där vi antar att gruppen skulle ha haft 60 % av sina vanliga nära kontakter, blir sjukdomsfallen, IVA fallen och dödsfallen fler.
+
+Tabell 1. Antal rapporterade fall bland de 70 år och äldre som är hemmaboende utifrån olika scenarier, 1 mars 2020 ­ 1 september 2020.
+
+Tabell 1. Antal rapporterade fall bland de 70 år och äldre som är hemmaboende utifrån olika scenarier, 1 mars 2020 ­ 1 september 2020.
+
+Typ av fall
+
+Antal och skillnad från Scenario 0
+
+Scenario 0*
+
+Scenario 1*
+
+Scenario 2*
+
+Totalt antal fall
+
+Antal över perioden
+
+9 463
+
+13 810
+
+17 026
+
+Totalt antal fall
+
+Skillnad från Scenario 0
+
+-
+
+4 347
+
+7 563
+
+Slutenvårdsfall
+
+Antal över perioden
+
+4 542
+
+6 629
+
+8 173
+
+Slutenvårdsfall
+
+Skillnad från Scenario 0
+
+-
+
+2 087
+
+3 631
+
+IVA fall
+
+Antal över perioden
+
+379
+
+552
+
+681
+
+IVA fall
+
+Skillnad från Scenario 0
+
+-
+
+173
+
+302
+
+Dödsfall
+
+Antal över perioden
+
+1 708
+
+2 464
+
+3 020
+
+Dödsfall
+
+Skillnad från Scenario 0
+
+-
+
+756
+
+1 312
+
+11 (21)
+
+*Antal kontakter av normala antalet är: 35% (scenario 0), 50% (scenario 1), respektive 60% (scenario 2) I Figur 3 presenteras resultaten från scenario 1, med en något ökad kontaktintensitet. Enligt simuleringen skulle de ökade kontakterna ha lett till fler fall under april och maj 2020, med en topp på ungefär 165 nya rapporterade fall per dag i början av april.
+Figur 3. Antal rapporterade fall (simulerade och faktiskt rapporterade) bland 70+ som bor hemma i scenario 1.
+Figur 4. Antalet inläggningar i slutenvård och IVA, samt antalet dödsfall vid scenario 0 (baslinje, gul), scenario 1 (blå) och scenario 2 (grön).
+12 (21)
+
+Det finns också andra faktorer som kan påverka hur pandemin utvecklas, såsom andelen som haft covid-19 och hur länge man är immun efter genomgången infektion. Än så länge ser vi en lägre andel med antikroppar bland personer 6595 år jämfört med yngre grupper, vilket inte är oväntat (6). Det kan bero på att äldre generellt har färre kontakter än yngre grupper i befolkningen, men också på att personer 70 år och äldre har följt rekommendationen och begränsat sina nära kontakter mer än övriga. Hur risken att smittas förändras över tid påverkas av hur personer i samhället i olika åldrar förändrar sitt kontaktmönster. Om de yngre ökar sina kontakter kan risken för smitta öka även bland äldre, även vid få kontakter mellan gruppen 70 år och äldre och de yngre.
+Psykiska och fysiska konsekvenser av pandemin
+Det behövs mer internationell forskning om konsekvenser av covid-19 pandemin för psykisk och fysisk hälsa bland de som är 70 år och äldre, men det framgår att den fysiska isoleringen har lett till depressionskänslor, sömnsvårigheter och fysiska utmaningar. Majoriteten av dessa är genomförda i länder som haft åtgärder som i större utsträckning lett till att samhället stängts ner.
+Den svenska strategin för att minska smittspridning bygger i stor utsträckning på frivillighet och de vidtagna åtgärderna har inte lett till en nedstängning av samhället, vilket skiljer sig från flera
+13 (21)
+
+andra länder. De äldre kan, och rekommenderas att, vistas ute. Det är därför viktigt att studera konsekvenserna för personer 70 år och äldre med hjälp av empiriska data från en svensk kontext.
+Oro för att bli allvarligt sjuk i covid-19 är vanligare bland de som är 70 år och äldre än bland de som är yngre, visar Novus beteendeundersökningar samt enkäten Hälsorapport. Hälsorapport visar också att många är fortsatt fysiskt aktiva och vistas utomhus, men att de saknar sina sociala sammanhang. Så här svarar en kvinna på frågan om ensamhet.
+"Få fysiska kontakter. Saknar barn och barnbarn, att få vara nära dem, kramas, prata och skratta."Kvinna, 82 år
+Fritextsvaren visar att många har copingstrategier som hjälper dem att må bra under denna tid, och de som nämns är samma strategier som enligt litteraturen är hälsofrämjande. Exempelvis handlar det om att hålla kontakt med nära och kära via telefon och digital teknik och att röra sig ute i naturen. Hur situationen upplevs och vilka konsekvenser den får kan bero på personliga egenskaper, hälsa och sociala och materiella resurser (7). Det finns också generella skillnader mellan kvinnor och män, såsom att kvinnor känner sig mer ensamma och har mer besvär med stress och sömnsvårigheter samt är mindre fysiskt aktiva än män. Det finns också skillnader mellan ensamboende och sammanboende, såsom att de som bor ensamma har mindre möjligheter att få hjälp och vistas mindre utomhus än de som är sammanboende.
+Personer 70 år och äldre är en heterogen grupp med olika förutsättningar och resurser. Detta återspeglas i analyser av enkätdata och i den återkoppling vi fått från intresseorganisationer. De som redan är socialt, ekonomiskt och hälsomässigt utsatta tycks ha en större risk för negativa konsekvenser (både psykiskt och fysiskt), vilket i sig kan leda till ökad ojämlikhet, samtidigt som de är svårare att nå med förebyggande arbete. Organisationerna pekar också på att det digitala utanförskapet har blivit tydligare och slagit hårdare mot gruppen eftersom man inte kan träffas fysiskt. Detta gäller inte minst utrikesfödda.
+En majoritet av både män och kvinnor, 70 år och äldre, uppger i Novus beteendeundersökningar att de har följt rekommendationerna, men andelen minskar över tid bland män. Samråd med flera pensionärsorganisationer visar också att många i gruppen är frustrerade och känner sig särbehandlade. Denna särbehandling uppfattas som stigmatiserande.
+Organisationen Minds stödlinje för äldre rapporterar att de får fler samtal från människor som uttrycker att de inte tycker sig ha något att leva för längre. Personal vid Norra Stockholms psykiatri, Mottagningen för äldrepsykiatri i Stockholm rapporterar också om ökad oro och ångest bland personer med psykiatrisk diagnos, med ökat behov av kontakter och inneliggande vård.
+De samlade kunskaperna visar att smittskyddsåtgärden har inverkat negativt på äldres hälsa, och att konsekvenserna riskerar att förvärras ju längre den pågår. Analyser av data från 1177 Vårdguiden visar att äldre personer ombetts avvakta att söka vård och färre har hört av sig för exempelvis hjärtbesvär jämfört med samma period 2019. Det kan således finnas ett uppdämt vårdbehov. Detta bekräftas av självrapporterade uppgifter i Hälsorapport där fler personer som är 70 år och äldre uppger att de undvikit att söka vård trots behov
+Åtgärder för att minska psykiska och fysiska
+14 (21)
+
+konsekvenser av pandemin
+God och tillförlitlig information skyddar mot oro. Det är därför viktigt att alla kan ta del av den information som finns, oavsett bakgrund och språkkunskaper. Företrädare för verksamheter och organisationer för utrikesfödda efterfrågar också information och rådgivning direkt till närstående kring hur man kan underlätta välmående för äldre anhöriga.
+
+I litteraturen finns rekommendationer om hur äldre kan bibehålla den psykiska hälsan i social isolering under pandemin, se tabell 2. Det handlar bland annat om sätt att förebygga ensamhet och sömnsvårigheter, upprätthålla kognitiv stimulans och förebygga kognitiv nedsättning (8). Den fysiska hälsan kan bibehållas genom att äldre får stöd i att vara fysiskt aktiva. Fysisk aktivitet kan också lindra de psykiska besvär som äldre upplever under pandemin (9).
+
+Tabell 2. Rekommendationer på aktiviteter i hemmet för att bibehålla den fysiska och psykiska hälsan i karantän under pandemin.
+
+Tabell 2. Rekommendationer på aktiviteter i hemmet för att bibehålla den fysiska och psykiska hälsan i karantän under pandemin.
+
+Syfte
+
+Rekommendation
+
+Förebygga ensamhet
+Förebygga sömnsvårigheter Upprätthålla kognitiv stimulans
+Förebygga kognitiv nedsättning och förbättra självkänslan Förebygga fysisk och psykisk ohälsa Förebygga benskörhet
+
+Upprätthålla kontakter med släktningar, stärka sociala kontakter. Öka användningen av digitala hjälpmedel, webbverktyg och sociala medier.
+Ha en regelbunden sömncykel, vara fysiskt aktiv och äta hälsosamt
+Använda elektroniska verktyg, appar och andra teknologiska resurser. Delta i dagliga, skräddarsydda aktiviteter.
+Erbjuda ett träningsprogram 5­7 dagar i veckan som innehåller konditionsträning och träning med medelmotstånd.
+Ge äldre stöd i att vara fysiskt aktiva, t.ex. genom promenader och rörelseövningar stående, sittande eller liggande.
+Träna styrka med både låg och hög belastning.
+
+Litteraturen ger också rekommendationer till myndigheter, se tabell 3. De handlar om att minska stressen som är relaterad till isoleringen under pandemin, öka motståndskraften mot påfrestningar och få de äldre att fortsatt följa rekommendationer under pandemin (8).
+
+Tabell 3. Rekommendation till hälsovårdsmyndigheter för att minska negativa fysiska och psykiska konsekvenser under pandemin.
+
+Syfte
+
+Rekommendation
+
+Minska stress relaterad till isoleringen
+Öka resiliens (motståndskraft) och öka följsamheten till rekommendationer under pandemin
+
+Begränsa tiden för karantän till kortast möjliga, ge tillräckligt med information av god kvalitet och använda informationskanaler som äldre är vana att använda.
+Använda ett inkluderande språk när man pratar om äldre, värdera de äldres bidrag och undvika negativ betoning på risk, använda icke-nedlåtande berättelser om äldre människors styrkor.
+
+Det behövs också åtgärder på andra nivåer i samhället, såsom på kommunnivå, och vi ser en del goda exempel. I Borås har man skapat en stödlinje för äldre och riskgrupper, med både praktisk hjälp och samtalsstöd för de som är oroliga och vill ha någon att prata med. Norrtälje kommun har en satsning på att ringa alla som är 80 år och äldre, vilket de menar uppskattats av invånarna.
+
+Troliga negativa konsekvenser på sikt
+
+15 (21)
+
+Hälsan bland personer 70 år och äldre riskerar att förvärras ju längre smittskyddsåtgärderna pågår, och pensionärsföreningarna uttrycker en oro om att läget kan komma att förvärras för deras medlemmar under hösten. Det finns förstås inte några direkta studier på detta, men det är också Folkhälsomyndighetens slutsats utifrån det studerade materialet. Publikationer av ledande experter (se bilaga 2b) pekar på att en längre tids isolering ökar risken för flera psykiatriska tillstånd (t.ex. depression, ångest och sömnbesvär), missbruk och suicid. Även den fysiska hälsan blir sämre pga. minskad fysisk aktivitet och mer stillasittande när många tillbringar mer tid inomhus. Självisolering i flera veckor eller månader är därför en fysiologisk utmaning med betydande hälsorisker. Detta riskerar att drabba i stort alla äldre men framför allt de som kom ur sina vardagsrutiner när aktiviteter stängdes ned, och de som från början är mer sköra. Dessutom kan de negativa konsekvenserna förvärras under hösten och vintern, dels för att det blir svårare med aktiviteter utomhus i mörker och kyla, dels för att mörkret inverkar på den psykiska hälsan. Från sjukvården kommer signaler om att antalet upptäckta cancerfall minskat jämfört med samma period föregående år, vilket kan tyda på att personer undviker att söka vård. Att flera som är 70 år och äldre undvikit att söka vård trots behov bekräftas av svaren i Hälsorapport. Att inte söka vård i tid kan leda till sämre prognos, och det är därför viktigt att söka vård vid behov.
+16 (21)
+
+Diskussion
+Folkhälsomyndigheten har studerat det epidemiologiska läget, forskningslitteraturen, resultat från svenska undersökningar och intervjuat representanter för målgruppen. Utifrån det har kunskapen om konsekvenserna av smittskyddsåtgärden för personer 70 år och äldre och av förebyggande insatser som kan genomföras för att minska negativa konsekvenser sammanställts.
+I korthet visar resultaten att:
+Den nuvarande rekommendationen i de allmänna råden för personer 70 år och äldre har minskat antalet sjukdomsfall och död i covid-19 i ett läge då smittspridningen var hög, men medför också negativa effekter på gruppens hälsa.
+Mycket tyder på att de som redan var socialt, ekonomiskt och hälsomässigt utsatta nu mår sämre, och riskerar vidare att drabbas hårdast av de negativa konsekvenserna av pandemin. Dessa grupper är också svårast att nå med det förebyggande arbete som nu måste intensifieras. Det finns indikationer på ett uppdämt vårdbehov, både avseende psykisk och fysisk hälsa.
+Litteraturen visar att god och tillförlitlig information skyddar mot oro, och det finns rekommendationer om saker som individer och myndigheter kan göra för att motverka negativa konsekvenser av fysisk isolering. Saknaden efter sociala sammanhang är stor och det digitala utanförskapet har blivit tydligare när man inte kan träffas fysiskt. Detta gäller inte minst vissa grupper av utrikesfödda. Det behövs fler insatser för och mer kunskap om hur äldre bättre kan tillägna sig digital teknik.
+Insatser är nödvändiga för att begränsa smittan. Litteraturen visar att de negativa konsekvenserna av fysisk isolering minskas om de kan avgränsas i tid.
+Motverka de negativa konsekvenserna
+I litteraturen finns goda exempel på att kommuner och organisationer har olika former av uppsökande verksamhet och erbjuder praktisk hjälp till äldre. Sådana insatser kan till viss del motverka de negativa konsekvenserna av åtgärden och av pandemin i sig, och dessa erfarenheter kan vara ett bra underlag när hälsofrämjande och förebyggande insatser ska utformas. Personer som är 70 år och äldre är dock en heterogen grupp med varierande behov, vilket man också behöver ta hänsyn till.
+Studier visar att tillräcklig och tillförlitlig information i sig är en källa till att minska oro (7). För att bli så relevant som möjligt är det viktigt att information tas fram i dialog med de grupper som berörs. Företrädare för verksamheter och organisationer för utrikesfödda efterfrågar också information och rådgivning direkt till närstående kring hur man kan underlätta välmående för äldre anhöriga. Tydlig kommunikation och information om vad som innebär mer eller mindre ökad risk (situationer, medicinska tillstånd etc.) har därför även framöver stor betydelse för personer 70 år och äldre och deras anhöriga.
+Pandemin har påskyndat den digitala utvecklingen. Många äldre saknar dock digital vana och har inte kunnat ta del av de insatser som införts för deras skull. Samtidigt har vissa ökat sin digitala kompetens. Det behövs fler insatser för och mer kunskap om hur äldre bättre kan tillägna sig
+17 (21)
+
+digital teknik (10). Det finns ett stort behov av att förebygga psykisk och fysisk ohälsa bland personer 70 år och äldre, och det ökar ju längre pandemin pågår. De som är mer socialt, ekonomiskt och hälsomässigt utsatta riskerar att drabbas hårdast av de negativa konsekvenserna av pandemin, vilket ökar ojämlikheten i hälsa. Dessa grupper är också svårast att nå med det förebyggande arbete som nu måste intensifieras.
+18 (21)
+
+Slutsatser
+Smittskyddsåtgärderna som införts under pandemin har minskat antalet sjukdomsfall och död i covid-19. Det finns dock en påtaglig risk för att smittskyddsåtgärden gällande fysisk distansering på sikt leder till sämre hälsa för personer 70 år och äldre. Åtgärder som denna bör därför användas under begränsade perioder. Det finns ett stort behov av att förebygga psykisk och fysisk ohälsa bland personer 70 år och äldre, i synnerhet bland de mer socialt, ekonomiskt och hälsomässigt utsatta, och behoven ökar ju längre pandemin pågår. Oavsett om det finns en särskild smittskyddsåtgärd för personer 70 år och äldre eller inte så gäller att ju äldre man är, desto större är risken för allvarlig sjukdom och död till följd av covid-19. Risken ökar ytterligare om man dessutom har andra sjukdomar. Tydlig information och stöd är viktigt för att förhindra oro och hjälpa personer som är 70 år och äldre och anhöriga att göra medvetna och väl informerade val. Avgörande för att hålla smittspridningen på en låg nivå är att alla i befolkningen följer de allmänna råden. Det är allas ansvar. Verksamhetsutövare bör också så långt som möjligt skapa förutsättningar för individer att kunna följa de allmänna råden. En låg smittspridning begränsar de negativa konsekvenserna för såväl personer 70 år och äldre, befolkningen i stort som samhället.
+19 (21)
+
+Referenser*
+1. Folkhälsomyndigheten. Utvärdering av åldersgräns för särskilda råd till personer 70 år eller äldre. 2020-05-27.
+2. Romero Starke K, Petereit-Haack G, Schubert M, Kämpf D, Schliebner A, Hegewald J, et al. The Age-Related Risk of Severe Outcomes Due to COVID-19 Infection: A Rapid Review, Meta-Analysis, and Meta-Regression. International journal of environmental research and public health. 202017(16):5974.
+3. Hägg S, Jylhävä J, Wang Y, Xu H, Metzner C, Annetorp M, et al. Age, frailty and comorbidity as prognostic factors for short-term outcomes in patients with COVID-19 in geriatric care. Journal of the American Medical Directors Association. 2020.
+4. Folkhälsomyndigheten. Folkhälsomyndighetens arbete med covid-19 [updated 2020-06-18 cited 2020-09-25]. Available from: www.folkhalsomyndigheten.se/smittskydd-beredskap/utbrott/aktuellautbrott/covid-19/folkhalsomyndighetens-arbete-med-covid-19/.
+5. Folkhälsomyndigheten. Föreskrifter och allmänna råd ­ covid-19 [updated 2020-09-30 cited 2020-1001]. Available from: www.folkhalsomyndigheten.se/smittskydd-beredskap/utbrott/aktuellautbrott/covid-19/foreskrifter-och-allmanna-rad/.
+6. Folkhälsomyndigheten. Påvisning av antikroppar efter genomgången covid-19 i blodprov från öppenvården (Delrapport 1). 2020.
+7. Folkhalsomyndigheten. Påverkar covid-19-pandemin befolkningens psykiska hälsa? 2020-08-20. 8. Sepulveda-Loyola W, Rodriguez-Sanchex I, Perez-Rodriguez P, Ganz F, Torralba R, Oliviera D, et al.
+Impact of social isolation due to COVID-19 on health in older people: Mental and physical effects and recommendations. J Nutr Health Aging. 2020. 9. Callow DD, Arnold-Nedimala NA, Jordan LS, Pena GS, Won J, Woodard JL, et al. The Mental Health Benefits of Physical Activity in Older Adults Survive the COVID-19 Pandemic. Am J Geriatr Psychiatry. 2020. 10. Folkhälsomyndigheten F, Socialstyrelsen, Statens beredning för medicinsk och social utvärdering och Myndigheten för delaktighet. Digital teknik för social delaktighet bland äldre personer. 2018. 11. *Notera att bilagornas referenser återfinns i respektive bilaga.
+20 (21)
+
+Bilagor
+Bilaga 1. Modellering av spridning av covid-19 i gruppen personer 70 år och äldre - effekt av rekommendationen om begränsning av kontakter (PDF, 630 kB) Bilaga 2a. Psykiska och fysiska konsekvenser av pandemin och sätt att minska dem (PDF, 442 kB) Bilaga 2b. Sammanfattning av litteraturöversikten samt litteratursökningar (PDF, 375 kB)
+21 (21)
+
+

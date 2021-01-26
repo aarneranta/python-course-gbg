@@ -83,7 +83,8 @@ class Exp: # given: just copy this class to your code
     def parts(self):
         return self.op, self.args
 ```
-In compilers, one can find more complicated classes to represent abstract syntax, but this one is enough for our purposes. Notice that the list of arguments can be empty; this is the case when we represent *atomic expressions* such as *numeric constants* and *variable symbols*. Thus the tree for representing the expression ```
+In compilers, one can find more complicated classes to represent abstract syntax, but this one is enough for our purposes. Notice that the list of arguments can be empty; this is the case when we represent *atomic expressions* such as *numeric constants* and *variable symbols*. Thus the tree for representing the expression
+```
 (x+1)^3
 ```
 is

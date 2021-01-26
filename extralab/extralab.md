@@ -1,12 +1,14 @@
 # Extra Assignment: Symbolic Computation
 
-*Preliminary version: to be completed before release!*
+*Preliminary version: to be completed before official start!*
+
+Aarne Ranta 2021
 
 ## The task
 
 Symbolic computation is computation with mathematical expressions, instead of numbers. The result is a simple **computer algebra system**.
 
-School examples of symbolic computation include:
+Typical examples of symbolic computation include:
 - **symbolic derivation**: convert the polymonial `x^2 + 3x + 1` to `2x + 3`
 - **simplification**: convert `(x+1)^3` to the polynomial form `x^3 + 3x^2 + 3x + 1`
 
@@ -17,7 +19,7 @@ In this assignment, we will do both these things. In addition, we will need
 - *printing*: convert the internal representation back to a user-readable string.
 
 The task can be conveniently divided into two subtasks:
-1. **Task 1**: symbolic computation on an internal representation
+1. **Task 1**: symbolic computation on internal representations
 2. **Task 2**: parsing and printing
 
 The tasks can be done independently of each other. Completing one of the tasks is enough for mark 4 for the course, and both tasks give mark 5.
@@ -25,30 +27,39 @@ The tasks can be done independently of each other. Completing one of the tasks i
 
 ### Expression trees
 
-A moment's reflection shows that symbolic computation would be extremely complicated if carried out directly on strings. The proper format, used in all computer algebra systems and also in compilers for programming languages, is **trees**, also known as **abstract syntax trees** when used for representing syntax.
-An expression tree is a class with two variables: an **operator** and its **argument list**, where the arguments in the list are themselves expression trees. We assume that you use the following class for expressions:
+A moment's reflection shows that symbolic computation would be extremely complicated if carried out directly on strings. The proper format, used in all computer algebra systems and also in compilers for
+programming languages, is **trees**, also known as **abstract syntax trees** in this context.
+
+In Python, we can implement abstract syntax trees as a class with two variables: an **operator** and its **argument list**. The arguments in the list are expected to be expression trees themselves, which means that trees are a **recursive data structure**.
+
+In this assignment, we will assume that you use the following class for expressions:
 ```
-class Exp:
+class Exp: # given: just copy this to your code
+```
+```
     def __init__(self,op,args):
         self.op = op
         self.args = args
+```
+```		
     def parts(self):
         return self.op, self.args
 ```
-In literature, you can find much more complicated classes to represent abstract syntax, but this one is enough for our purposes here - and in fact, for all abstract syntax purposes. Notice that the list of arguments can be empty; this is the case when we represent *atomic expressions* such as *numeric literals* and *variable symbols*. Thus the tree for representing the expression x+10 is
+In compiler literature, one can find more complicated classes to represent abstract syntax, but this one is enough for our purposes. Notice that the list of arguments can be empty; this is the case when we represent *atomic expressions* such as *numeric constants* and *variable symbols*. Thus the tree for representing the expression x+10 is
 ```
 Exp('+',[Exp('x',[]),Exp('10',[])])
 ```
-Exp is clearly a *recursive datatype*, and most of the functions needed to operate on them are *recursive functions*.
+Since Exp is a recursive datatype, many of the functions needed to operate on them are *recursive functions*.
 
 
-### Polynomials
 
-Polynomials with one variable, as already familiar from Lab 3, have a simpler representation than arbitrary expressions: as lists of coefficients for each power of the variable, representing their sum. Thus the polynomial
+### Polynomials and derivation
+
+Polynomials with one variable, as familiar from Lab 3, admit a simpler representation than arbitrary expressions: as lists of coefficients for each power of the variable, representing their sum. Thus the polynomial
 ```
 2 - 3x^2 + x^3
 ```
-is represented by the list
+can be represented by the list
 ```
 [2, 0, -3, 1]
 ```
@@ -60,14 +71,26 @@ Polynomials represented in this way have a simple method for differentiation, co
 - if `f(x) = g(x) + h(x)`, then `f'(x) = g'(x) + h'(x)`
 
 
+Your first task is to define the derivation function,
+```
+def deriv_polynom(poly): # your task
+    # return the polynomial that is the derivative of poly 
+```
+This should for instance satisfy
+```
+deriv_polynom([2,0,-3,1]) == [0,-6,3]
+```
+
+
+
 ### Converting expressions to polynomials
 
-Defining derivation for polynomials is a part of Task 1 - an easy part.
+Defining derivation for polynomials is a part of Task 1 - the easy part.
 A more tricky part is the conversion of arbitrary expressions (of class `Exp`) to polynomials. To make this viable in the given timeframe, we restrict `Exp` to a few forms that can always be converted to polynomials. The set of expression is defined by the following BNF grammar:
 ```
 <exp> ::= <int>
 <exp> ::= x
-<exp> ::= ( <exp> op <exp> )
+<exp> ::= ( <exp> <op> <exp> )
 <exp> ::= ( <exp> ^ <int> )
 <op>  ::= + | - | *
 <int> ::= 0 | 1 | 2 | ... | 123 | ...

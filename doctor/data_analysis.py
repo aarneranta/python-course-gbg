@@ -81,7 +81,7 @@ def read_dict(filename):
     dict = {}
     for line in file:
         entry = line.split()
-        if len(entry) > 1:
+        if len(entry) > 0:
             dict[entry[0]] = entry[1:]
     file.close()
     return dict

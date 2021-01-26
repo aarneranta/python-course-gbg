@@ -19,16 +19,56 @@ In this assignment, we will do both these things. In addition, we will need
 - *printing*: convert the internal representation back to a user-readable string.
 
 The task can be conveniently divided into two subtasks:
-1. **Task 1**: symbolic computation on internal representations
+1. **Task 1**: symbolic computation on internal representations (abstract syntax trees)
 2. **Task 2**: parsing and printing
 
 The tasks can be done independently of each other. Completing one of the tasks is enough for mark 4 for the course, and both tasks give mark 5.
 
 
-### Expression trees
 
-A moment's reflection shows that symbolic computation would be extremely complicated if carried out directly on strings. The proper format, used in all computer algebra systems and also in compilers for
-programming languages, is **trees**, also known as **abstract syntax trees** in this context.
+### Polynomials and derivation
+
+Polynomials with one variable, as familiar from Lab 3, admit a simple internal representation: as lists of coefficients for each power of the variable, representing their sum. Thus the polynomial
+```
+2 - 3x^2 + x^3
+```
+can be represented by the list
+```
+[2, 0, -3, 1]
+```
+Notice that we write the list in the *ascending order* of powers, which makes it easy to relate the positions to exponents: the number at position *n* is the coefficient of *x^n*.
+
+Polynomials represented in this way have a simple method for differentiation, corresponding to the rules
+- if `f(x) = ax^n`, then `f'(x) = nax^(n-1)` (which becomes 0 if `n = 0`)
+- if `f(x) = g(x) + h(x)`, then `f'(x) = g'(x) + h'(x)`
+
+
+Your first task is to define the derivative of polynomials,
+```
+def deriv_polynom(poly): # your task
+    # return the polynomial that is the derivative f'(x) of a polynomial f(x) 
+```
+This should for instance satisfy
+```
+deriv_polynom([2,0,-3,1]) == [0,-6,3]
+```
+
+### Arbitrary expressions and abstract syntax trees
+
+Algebraic expressions in general may not be polynomials, but formed by the operators in arbitrary ways. An example is
+```
+(x + 1)^3
+```
+which can, however, be *simplified* to a polynomial,
+```
+1 + 3x + 3x^2 + x^3
+```
+The simplification process is another task that we address in this assignment:
+```
+def exp2polynom(exp): # your task
+    # convert arbitrary expressions to polynomials
+```
+What is the internal representation of arbitrary expressions? A moment's reflection shows that simplification (and indeed all symbolic computation) would be extremely complicated if carried out directly on strings. The proper format, used in all computer algebra systems and also in compilers for programming languages, is **trees**, also known as **abstract syntax trees** in this context.
 
 In Python, we can implement abstract syntax trees as a class with two variables: an **operator** and its **argument list**. The arguments in the list are expected to be expression trees themselves, which means that trees are a **recursive data structure**.
 
@@ -43,48 +83,21 @@ class Exp: # given: just copy this class to your code
     def parts(self):
         return self.op, self.args
 ```
-In compilers, one can find more complicated classes to represent abstract syntax, but this one is enough for our purposes. Notice that the list of arguments can be empty; this is the case when we represent *atomic expressions* such as *numeric constants* and *variable symbols*. Thus the tree for representing the expression x+10 is
+In compilers, one can find more complicated classes to represent abstract syntax, but this one is enough for our purposes. Notice that the list of arguments can be empty; this is the case when we represent *atomic expressions* such as *numeric constants* and *variable symbols*. Thus the tree for representing the expression ```
+(x+1)^3
 ```
-Exp('+',[Exp('x',[]),Exp(10,[])])
+is
+```
+Exp('^',[Exp('+',[Exp('x',[]),Exp(1,[])]),Exp(3,[])])
 ```
 Since Exp is a recursive datatype, many of the functions needed to operate on them are *recursive functions*.
-
-
-
-### Polynomials and derivation
-
-Polynomials with one variable, as familiar from Lab 3, admit a simpler representation than arbitrary expressions: as lists of coefficients for each power of the variable, representing their sum. Thus the polynomial
-```
-2 - 3x^2 + x^3
-```
-can be represented by the list
-```
-[2, 0, -3, 1]
-```
-Notice that we write the list in the *ascending order* of powers, which makes it easy to relate the positions to exponents: the number at position *n* is the coefficient of *x^n*.
-
-Polynomials represented in this way have a simple method for differentiation, corresponding to the rules
-- if `f(x) = ax^n` and `n != 0`, then `f'(x) = nax^(n-1)`
-- if `f(x) = ax^0`, then `f'(x) = 0`
-- if `f(x) = g(x) + h(x)`, then `f'(x) = g'(x) + h'(x)`
-
-
-Your first task is to define the derivation function,
-```
-def deriv_polynom(poly): # your task
-    # return the polynomial that is the derivative f'(x) of a polynomial f(x) 
-```
-This should for instance satisfy
-```
-deriv_polynom([2,0,-3,1]) == [0,-6,3]
-```
 
 
 
 ### Converting expressions to polynomials
 
 Defining derivation for polynomials is a part of Task 1 - the easy part.
-A more tricky part is the conversion of arbitrary expressions (of class `Exp`) to polynomials. To make this viable in the given timeframe, we restrict `Exp` to a few forms that can always be converted to polynomials. The set of expression is defined by the following BNF grammar:
+A more tricky part is the conversion of arbitrary expressions (of class `Exp`) to polynomials. To make this viable in the given timeframe, we restrict `Exp` to a few forms that can always be converted to polynomials. This set of expression is defined by the following BNF grammar:
 ```
 <exp> ::= <int>
 <exp> ::= x
@@ -95,13 +108,13 @@ A more tricky part is the conversion of arbitrary expressions (of class `Exp`) t
 ```
 In other words,
 - expressions are built from positive integer literals and the variable `x`
-- two expressions can be combined with a binary operator `x - *`, and parentheses around the combination
+- two expressions can be combined with a binary operator `+`, `-`, or `*`, with parentheses around the combination
 - an expression can be raised to a positive integer power, with parentheses around the combination
 
 The restriction to positive integers as powers is made to guarantee a conversion to polynomials.
 The addition of parentheses around all applications of a binary operator (including exponentiation) is there to help parsing; relaxing this with the standard operator precedence rules would be possible but a bit too much for this task.
 
-As an example, the expression `(2x - 3)^4` is written
+Since extra parentheses is required by the grammar, the expression `(2x - 3)^4` is written
 ```
 (((2*x)-3)^4)
 ```

@@ -34,20 +34,18 @@ In Python, we can implement abstract syntax trees as a class with two variables:
 
 In this assignment, we will assume that you use the following class for expressions:
 ```
-class Exp: # given: just copy this to your code
-```
-```
+class Exp: # given: just copy this class to your code
+
     def __init__(self,op,args):
         self.op = op
         self.args = args
-```
-```		
+
     def parts(self):
         return self.op, self.args
 ```
-In compiler literature, one can find more complicated classes to represent abstract syntax, but this one is enough for our purposes. Notice that the list of arguments can be empty; this is the case when we represent *atomic expressions* such as *numeric constants* and *variable symbols*. Thus the tree for representing the expression x+10 is
+In compilers, one can find more complicated classes to represent abstract syntax, but this one is enough for our purposes. Notice that the list of arguments can be empty; this is the case when we represent *atomic expressions* such as *numeric constants* and *variable symbols*. Thus the tree for representing the expression x+10 is
 ```
-Exp('+',[Exp('x',[]),Exp('10',[])])
+Exp('+',[Exp('x',[]),Exp(10,[])])
 ```
 Since Exp is a recursive datatype, many of the functions needed to operate on them are *recursive functions*.
 
@@ -74,7 +72,7 @@ Polynomials represented in this way have a simple method for differentiation, co
 Your first task is to define the derivation function,
 ```
 def deriv_polynom(poly): # your task
-    # return the polynomial that is the derivative of poly 
+    # return the polynomial that is the derivative f'(x) of a polynomial f(x) 
 ```
 This should for instance satisfy
 ```
@@ -131,14 +129,14 @@ In this part, you have to define the following functions:
   def exp2polynom(exp): ...
   # exp2polynom(pow(add(var(),const(1)),const(3))) == [1, 3, 3, 1]
 ```
-You should copy and use the class `Exp` defined above. Since no parser is assumed here, it is handy to define some helper functions to construct expressions, as shown in the second example:
+You should copy and use the class `Exp` defined above. Since no parser is assumed here, it is handy to define some helper functions to construct expressions to be able to test your code easily. The second example above uses some such functions, and you should define the following:
 ```
 def app(op,x,y):
     return Exp(op,[x,y])
 
 def add(x,y):
     return app("+",x,y)
- # and so on for other binary operators
+ # and so on for all binary operators: add, sub, mul, pow
 
 def var():
     return Exp("x",[])
@@ -148,7 +146,7 @@ def const(n):
 ```
 The `exp2polynom()` function itself is a recursive function that can call helper functions. For instance, it can be helpful to
 - first simplify the expression to a sum of terms of the form `ax^n`
-- then sort these terms by the exponent and combine terms with the same exponent (hint: using a dictionary data structure can be helpful here!)
+- then sort these terms by the exponent and combine terms with the same exponent (hint: using a dictionary data structure indexed on the exponent can be helpful here!)
 
 
 ### Parsing and printing

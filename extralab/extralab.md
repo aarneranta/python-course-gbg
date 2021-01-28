@@ -256,9 +256,8 @@ As a more complex example, the stub `symbolic.py` provides a parser for prefix e
 ```
 # parse prefix expressions e.g. (+ x 2), returning Exp,remaining_token_list
 def tparse(toks):  # given as example of recursive descent parsing
-    if not toks:
-        return
-    elif toks[0] == '(':           # if the first token is '(' an operator application is expected
+  while toks:
+    if toks[0] == '(':           # if the first token is '(' an operator application is expected
         toks = toks[1:]            # go to the second token
         op,toks = expect_token(["+","-","*","^"],toks) # try to find an operator
         x,toks = tparse(toks)                          # after that, parse its first argument

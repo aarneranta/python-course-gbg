@@ -241,24 +241,34 @@ Since the lexer is familiar from Lab 1, just simpler, it should be an easy task.
 But the parser requires much more thinking.
 The simplest way to implement it is by the method of *recursive descent*, which builds an `Exp` tree by building subtrees and combining them in ways that depends on the tokens seen.
 The parser returns both an `Exp` and a list of remaining tokens, i.e. the tokens that the parser should continue with.
-As an example of this, the stub `symbolic.py` provides a parser for prefix expressions:
+The simplest case is a parser that just checks if the first token belongs to a list of expected tokens:
 ```
-# parse prefix expression strings e.g. (+ x 2), returning Exp and remaining token list
-def tparse(toks):                       # given as example of recursive descent parsing
-    head = toks[0]                            # consider the first token
-    if head == '(':                             # if it is '(' an operator application is expected
-        if toks[1] in ["+","-","*","^"]:        # the next token must be an operator
-            op = toks[1]
-            x,toks = tparse(toks[2:])           # parse the first expression after the operator
-            y,toks = tparse(toks)               # parse the second expression after the first one
-            if toks and toks[0] == ')':         # expect to find ')'
-                return Exp(op,[x,y]),toks[1:]   # build tree from op and its arguments, continue with remaining tokens
-            else:
-                print("parse error: expected ) found", toks)
-        else:
-            print("parse error: expected operator found", toks[1:])
+# auxiliary for parsing: return the first token if it is an expected one and move to the next token
+def expect_token(expected,toks):
+    if not toks:
+        print("parse error: expected one of", expected, "found nothing")  # expects at least one token
+    elif toks[0] in expected:
+        return toks[0],toks[1:]        # finds an expected token, returns it, and move to next item
     else:
-        return Exp(head,[]),toks[1:]
+        print("parse error: expected one of",expected, "found", toks[0])  # found some other token
+```
+As a more complex example, the stub `symbolic.py` provides a parser for prefix expressions:
+```
+# parse prefix expressions e.g. (+ x 2), returning Exp,remaining_token_list
+def tparse(toks):  # given as example of recursive descent parsing
+    if not toks:
+        return
+    elif toks[0] == '(':           # if the first token is '(' an operator application is expected
+        toks = toks[1:]            # go to the second token
+        op,toks = expect_token(["+","-","*","^"],toks) # try to find an operator
+        x,toks = tparse(toks)                          # after that, parse its first argument
+        y,toks = tparse(toks)                          # after that, parse its first argument
+        p,toks = expect_token([')'],toks)              # make sure a closing ')' comes next
+        return (Exp(op,[x,y]),toks)                    # return the operator application
+    elif toks[0].isdigit():               # if the first token is a numeric constant...
+        return (const(toks[0]),toks[1:])  # ...return the atomic tree
+    else:
+        return (var(),toks[1:])           # in all other cases, treat the first token as a variable
 ```
 Your task is to write the corresponding function for infix expressions,
 ```

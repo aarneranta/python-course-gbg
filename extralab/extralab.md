@@ -55,7 +55,7 @@ deriv_polynom([2,0,-3,1]) == [0,-6,3]
 
 ### Arbitrary expressions and abstract syntax trees
 
-Algebraic expressions in general may not be polynomials, but formed by the operators in arbitrary ways. An example is
+Algebraic expressions in general need not be polynomials, but can be formed by the operators in arbitrary ways. An example is
 ```
 (x + 1)^3
 ```
@@ -68,7 +68,7 @@ The simplification process is another task that we address in this assignment:
 def exp2polynom(exp): # your task
     # convert arbitrary expressions to polynomials
 ```
-What is the internal representation of arbitrary expressions? A moment's reflection shows that simplification (and indeed all symbolic computation) would be extremely complicated if carried out directly on strings. The proper format, used in all computer algebra systems and also in compilers for programming languages, is **trees**, also known as **abstract syntax trees** in this context.
+What is the internal representation of arbitrary expressions? A moment's reflection shows that simplification (and indeed all symbolic computation) would be extremely complicated if carried out directly on strings. The proper format, used in computer algebra systems and also in compilers for programming languages, is **trees**, also known as **abstract syntax trees** when representing the structure of expressions.
 
 In Python, we can implement abstract syntax trees as a class with two variables: an **operator** and its **argument list**. The arguments in the list are expected to be expression trees themselves, which means that trees are a **recursive data structure**.
 
@@ -83,21 +83,35 @@ class Exp: # given: just copy this class to your code
     def parts(self):
         return self.op, self.args
 ```
-In compilers, one can find more complicated classes to represent abstract syntax, but this one is enough for our purposes. Notice that the list of arguments can be empty; this is the case when we represent *atomic expressions* such as *numeric constants* and *variable symbols*. Thus the tree for representing the expression
+Thus an expression consists of an *operator* and a list of *arguments*.
+The operator could be a Python object of any type, but we will assume it to be either a string or an integer.
+The arguments will be assumed to be Exp objects themselves.
+In compilers, one can find more complicated classes to represent abstract syntax, usually posing more restrictions on valid expressions. 
+But this simple Exp class is enough for our purposes. 
+
+Notice that the list of arguments can be empty; this is the case when we represent *atomic expressions* such as *numeric constants* and *variable symbols*. Thus the tree for representing the expression
 ```
 (x+1)^3
 ```
-is
+is give by
 ```
 Exp('^',[Exp('+',[Exp('x',[]),Exp(1,[])]),Exp(3,[])])
 ```
-Since Exp is a recursive datatype, many of the functions needed to operate on them are *recursive functions*.
+A more graphical way of representing it is as a graph looking like an upside-down tree, where the op parts are *nodes* and each argument tree is a *branch*:
+```
+        ^
+      /   \
+     +     3
+   /   \
+  x     1
+```
+Since Exp is a recursive datatype, many of the functions needed to operate on Exp are *recursive functions*.
 
 
 
 ### Converting expressions to polynomials
 
-Defining derivation for polynomials is a part of Task 1 - the easy part.
+Defining the derivation of polynomials is a part of Task 1 - the easy part.
 A more tricky part is the conversion of arbitrary expressions (of class `Exp`) to polynomials. To make this viable in the given timeframe, we restrict `Exp` to a few forms that can always be converted to polynomials. This set of expression is defined by the following BNF grammar:
 ```
 <exp> ::= <int>
@@ -112,8 +126,10 @@ In other words,
 - two expressions can be combined with a binary operator `+`, `-`, or `*`, with parentheses around the combination
 - an expression can be raised to a positive integer power, with parentheses around the combination
 
-The restriction to positive integers as powers is made to guarantee a conversion to polynomials.
-The addition of parentheses around all applications of a binary operator (including exponentiation) is there to help parsing; relaxing this with the standard operator precedence rules would be possible but a bit too much for this task.
+The restriction to positive integers as powers is made to guarantee that the conversion to polynomials always works. 
+The division operator is left out for the same reason.
+
+The addition of parentheses around all applications of a binary operator (including exponentiation) is there to help parsing; relaxing this with the standard operator precedence rules would be possible but a bit too much for this lab.
 
 Since extra parentheses is required by the grammar, the expression `(2x - 3)^4` is written
 ```
@@ -132,8 +148,28 @@ in the internal list representation
 
 You should write a python file `symbolic.py` that contains functions explained below. It can also contain some extra helper functions, but you are not allowed to import any libraries; as usual, you would be likely to find libraries that solve the whole problem for you, which is not what we want here.
 
+To help you in this task, we have created a stub file `symbolic.py`, which you can edit further.
 
-### Symbolic computation
+Continuously with working on your file, you should run a test file, which reports errors. 
+When all tests pass, the run looks like this:
+```
+  $ python3 test_symbolic.py 
+  TESTING PART 1
+  PART 1 OK
+  TESTING PART 2
+  PART 2 OK
+```
+If you do both parts, you can moreover run your file with arbitrary input and demonstrate useful things with the `main` function given in `symbolic.py`:
+```
+  $ python3 symbolic.py 
+  enter expression> ((x + 5)^8)
+  tree: (^ (+ x 5) 8)
+  polynomial: [390625, 625000, 437500, 175000, 43750, 7000, 700, 40, 1]
+  first derivative: [625000, 875000, 525000, 175000, 35000, 4200, 280, 8]
+  second derivative: [875000, 1050000, 525000, 140000, 21000, 1680, 56]
+```
+
+### Part 1: symbolic computation
 
 In this part, you have to define the following functions:
 ```
@@ -143,7 +179,7 @@ In this part, you have to define the following functions:
   def exp2polynom(exp): ...
   # exp2polynom(pow(add(var(),const(1)),const(3))) == [1, 3, 3, 1]
 ```
-You should copy and use the class `Exp` defined above. Since no parser is assumed here, it is handy to define some helper functions to construct expressions to be able to test your code easily. The second example above uses some such functions, and you should define the following:
+You must use the class `Exp` as defined above. Since no parser is assumed in Part 1, it is handy to define some helper functions to construct expressions to be able to test your code easily. The second example above uses some such functions, and you should define the following:
 ```
 def app(op,x,y):
     return Exp(op,[x,y])
@@ -160,12 +196,33 @@ def const(n):
 ```
 The `exp2polynom()` function itself is a recursive function that can call helper functions. For instance, it can be helpful to
 - first simplify the expression to a sum of terms of the form `ax^n`
-- then sort these terms by the exponent and combine terms with the same exponent (hint: using a dictionary data structure indexed on the exponent can be helpful here!)
+- then sort these terms by the exponent and combine terms with the same exponent (hint: using a dictionary data structure indexed on the exponent has proven helpful!)
 
 
-### Parsing and printing
+### Part 2: printing and parsing
 
-Parsing consists of a *lexer* and a *recursive descent parser*
+We start with the easier part: printing, i.e. conversing Exp trees into strings.
+The above BNF grammar defines *infix* strings, where binary operators are put between their two arguments.
+```
+# convert Exp to infix string, e.g. (2 + x); separate the operator and its arguments by spaces
+def show_exp_infix(exp): 
+    print("show_exp_infix TODO")
+```
+Spaces are required for a more readable output and also to simplify testing.
+
+Another way of printing is as *prefix* strings, where operators are put before their arguments.
+```
+# convert Exp to prefix string, e.g. (+ 2 x); separate the operator and its arguments by spaces
+def show_exp_prefix(exp): 
+    print("show_exp_prefix TODO")
+```
+This output is often shown to make the tree structure explicit in a systematic way.
+It is also the notation used in the programming language LISP created in the 1950s: the idea was that programmers should write directly in abstract syntax to make the language easier to compile!
+
+
+
+
+Converting string input into an Exp tree is divided to a *lexer* and a *parser*
 ```
 def lex(string): # returns a list of tokens
 
@@ -175,19 +232,5 @@ We will write more on how these work...
 
 Printing for both Exp and polynomials...
 
-
-### Putting it all together
-
-A test function that takes an expression as input and shows a few things:
-```
->>> test()
-enter expression> ((x-10)^4)
-polynomial: 10000 - 4000x + 600x^2 - 40x^3 + x^4
-first derivative: -4000 + 1200x - 120x^2 + 4x^3
-second derivative: 1200 - 240x + 12x^2
-```
-This is possible if you have completed both tasks.
-
-We will provide a test file to help with the internals...
 
 

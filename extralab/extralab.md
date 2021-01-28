@@ -220,17 +220,59 @@ This output is often shown to make the tree structure explicit in a systematic w
 It is also the notation used in the programming language LISP created in the 1950s: the idea was that programmers should write directly in abstract syntax to make the language easier to compile!
 
 
-
-
 Converting string input into an Exp tree is divided to a *lexer* and a *parser*
 ```
 def lex(string): # returns a list of tokens
 
 def parse(tokens): # returns an object of class Exp
 ```
-We will write more on how these work...
+The lexer works very much the same way as tokenization in Lab 1.
+It scans strings to find tokens of the following kinds:
+- operators `+ - * ^`
+- parentheses `( )` 
+- positive integer literals (sequences of digits), e.g. `1987`
+- the variable `x`
+- spaces are allowed anywhere except inside integer literals, but not included in the token list returned
 
-Printing for both Exp and polynomials...
+Characters other than these should stop the process and report a *lexer error*. 
+It is enough just to print an error message and return an empty list of tokens.
+
+Since the lexer is familiar from Lab 1, just simpler, it should be an easy task.
+But the parser requires much more thinking.
+The simplest way to implement it is by the method of *recursive descent*, which builds an `Exp` tree by building subtrees and combining them in ways that depends on the tokens seen.
+The parser returns both an `Exp` and a list of remaining tokens, i.e. the tokens that the parser should continue with.
+As an example of this, the stub `symbolic.py` provides a parser for prefix expressions:
+```
+# parse prefix expression strings e.g. (+ x 2), returning Exp and remaining token list
+def tparse(toks):                       # given as example of recursive descent parsing
+    head = toks[0]                            # consider the first token
+    if head == '(':                             # if it is '(' an operator application is expected
+        if toks[1] in ["+","-","*","^"]:        # the next token must be an operator
+            op = toks[1]
+            x,toks = tparse(toks[2:])           # parse the first expression after the operator
+            y,toks = tparse(toks)               # parse the second expression after the first one
+            if toks and toks[0] == ')':         # expect to find ')'
+                return Exp(op,[x,y]),toks[1:]   # build tree from op and its arguments, continue with remaining tokens
+            else:
+                print("parse error: expected ) found", toks)
+        else:
+            print("parse error: expected operator found", toks[1:])
+    else:
+        return Exp(head,[]),toks[1:]
+```
+Your task is to write the corresponding function for infix expressions,
+```
+# parse infix expressions e.g. (x + 2), returning Exp, and remaining token list
+def eparse(toks): # TODO: recursive descent parser
+    print("eparse TODO")
+```
+To complete the task, we need a top parser function, which takes a parser (a function from token lists to pairs of expressions and remaining tokens) and returns an expression, *provided that the list of remaining tokens is empty*. 
+Thus it will for instance reject the result of parsing `(x + 2))`, which as an extra parentheses at the end.
+```
+# applied on top of a parser, returning Exp if the remaining token list is empty
+def top_parse(parser,toks): # TODO: parse with parser, and if no tokens remain, return tree, otherwise error
+    print("top_parse TODO")
+```
 
 
 

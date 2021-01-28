@@ -273,8 +273,8 @@ def tparse(toks):  # given as example of recursive descent parsing
 Your task is to write the corresponding function for infix expressions,
 ```
 # parse infix expressions e.g. (x + 2), returning Exp, and remaining token list
-def eparse(toks): # TODO: recursive descent parser
-    print("eparse TODO")
+def parse(toks): # TODO: recursive descent parser
+    print("parse TODO")
 ```
 To complete the task, we need a top parser function, which takes a parser (a function from token lists to pairs of expressions and remaining tokens) and returns an expression, *provided that the list of remaining tokens is empty*. 
 Thus it will for instance reject the result of parsing `(x + 2))`, which as an extra parentheses at the end.

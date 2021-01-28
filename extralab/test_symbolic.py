@@ -35,15 +35,17 @@ binom1 = sub(var(),const(1))
 binom2 = mul(binom1,binom1)
 binom3 = pow(binom1,const(3))
 binom4 = pow(binom2,const(2))
-binom6 = mul(binom2,binom3)
+binom5 = mul(binom4,binom1)
+binom6 = mul(binom2,(mul(binom2,binom2)))
 
 tests("exp2polynom(binom1)",[-1,1])
 tests("exp2polynom(binom2)",[1,-2,1])
 tests("exp2polynom(binom3)",[-1,3,-3,1])
 tests("exp2polynom(binom4)",[1,-4,6,-4,1])
-tests("exp2polynom(binom6)",[-1,5,-10,10,-5,1])
+tests("exp2polynom(binom5)",[-1, 5, -10, 10, -5, 1])
+tests("exp2polynom(binom6)",[1, -6, 15, -20, 15, -6, 1])
 
-tests("deriv_polynom(exp2polynom(binom4))", [-4, 12, -12, 4])
+tests("deriv_polynom(exp2polynom(binom6))", [-6, 30, -60, 60, -30, 6])
 
 print_errors(errors,1)
 errors = 0
@@ -55,9 +57,9 @@ tests("show_exp_infix(binom4)","(((x - 1) * (x - 1)) ^ 2)")
 
 tests("lex('((27*x)+123)')", ['(', '(', '27', '*', 'x', ')', '+', '123', ')'])
 
-tests("show_exp_prefix(top_parse(eparse, lex('((27*x)+123)')))", "(+ (* 27 x) 123)")
+tests("show_exp_prefix(top_parse(parse, lex('((27*x)+123)')))", "(+ (* 27 x) 123)")
 
-tests("show_exp_prefix(top_parse(eparse, lex('(((x - 1) * (x - 1)) * ((x - 1) ^ 3))')))", "(* (* (- x 1) (- x 1)) (^ (- x 1) 3))")
+tests("show_exp_prefix(top_parse(parse, lex('(((x - 1) * (x - 1)) * ((x - 1) ^ 3))')))", "(* (* (- x 1) (- x 1)) (^ (- x 1) 3))")
 
 print_errors(errors,2)
 

@@ -92,27 +92,36 @@ def show_exp_infix(exp): # TODO: infix printing of expressions
 def lex(s): # TODO: lexer for algebraic expressions, from string to token list
     print("lex TODO")
 
-        
-# parse prefix expression strings e.g. (+ x 2), returning Exp and remaining token list
-def tparse(toks):                       # given as example of recursive descent parsing
-    head = toks[0]                            # consider the first token
-    if head == '(':                             # if it is '(' an operator application is expected
-        if toks[1] in ["+","-","*","^"]:        # the next token must be an operator
-            op = toks[1]
-            x,toks = tparse(toks[2:])           # parse the first expression after the operator
-            y,toks = tparse(toks)               # parse the second expression after the first one
-            if toks and toks[0] == ')':         # expect to find ')'
-                return Exp(op,[x,y]),toks[1:]   # build tree from op and its arguments, continue with remaining tokens
-            else:
-                print("parse error: expected ) found", toks)
-        else:
-            print("parse error: expected operator found", toks[1:])
+
+# auxiliary for parsing: return the first token if it is an expected one and move to the next token
+def expect_token(expected,toks):
+    if not toks:
+        print("parse error: expected one of", expected, "found nothing")
+    elif toks[0] in expected:
+        return toks[0],toks[1:]
     else:
-        return Exp(head,[]),toks[1:]
+        print("parse error: expected one of",expected, "found", toks[0])
+
+
+# parse prefix expressions e.g. (+ x 2), returning Exp,remaining_token_list
+def tparse(toks):  # given as example of recursive descent parsing
+  while toks:
+    if toks[0] == '(':             # if the first token is '(' an operator application is expected
+        toks = toks[1:]            # go to the second token
+        op,toks = expect_token(["+","-","*","^"],toks) # try to find an operator
+        x,toks = tparse(toks)                          # after that, parse its first argument
+        y,toks = tparse(toks)                          # after that, parse its first argument
+        p,toks = expect_token([')'],toks)              # make sure a closing ')' comes next
+        return (Exp(op,[x,y]),toks)                    # return the operator application
+    elif toks[0].isdigit():               # if the first token is a numeric constant...
+        return (const(toks[0]),toks[1:])  # ...return the atomic tree
+    else:
+        return (var(),toks[1:])           # in all other cases, treat the first token as a variable
+    
 
 
 # parse infix expressions e.g. (x + 2), returning Exp, and remaining token list
-def eparse(toks): # TODO: recursive descent parser
+def parse(toks): # TODO: recursive descent parser
     print("eparse TODO")
 
     
@@ -125,7 +134,7 @@ def top_parse(parser,toks): # TODO: parse with parser, and if no tokens remain, 
 def main(): # given, don't change
     s = input("enter expression> ")
     toks = lex(s)
-    exp = top_parse(eparse,toks)
+    exp = top_parse(parse,toks)
     print("tree:", show_exp_prefix(exp))
     poly = exp2polynom(exp)
     print("polynomial:", poly)

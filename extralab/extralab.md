@@ -254,7 +254,7 @@ Polynomials have a simpler grammar than arbitrary expressions:
   <term> ::= <int2>? x
            | <int2>? x ^ <int2>
   <op>   ::= + | -
-  <int>  ::= 2 | 3 | 4 | ...
+  <int2> ::= 2 | 3 | 4 | ...
 ```
 The main differences from the `<exp>` grammar are:
 - parentheses are not used

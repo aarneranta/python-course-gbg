@@ -14,13 +14,14 @@ Typical examples of symbolic computation include:
 
 (We use the operator `^` for exponentiation, as is customary for mathematical text processing systems such as LaTeX.)
 
-In this assignment, we will do both these things. In addition, we will need
+In this assignment, we will do both these things. In addition, a user-friendly system needs
 - *parsing*: convert a string to an internal data object that represents expressions in a way that supports symbolic computation.
 - *printing*: convert the internal representation back to a user-readable string.
 
-The task can be conveniently divided into two subtasks:
+Parsing would be a bit too much for this assignment and will be provided by an external module `parse_symbolic.py`.
+Your task is divided into two subtasks as follows:
 1. **Task 1**: symbolic computation on internal representations (abstract syntax trees)
-2. **Task 2**: parsing and printing
+2. **Task 2**: printing expressions in a nice way
 
 The tasks can be done independently of each other. Completing one of the tasks is enough for mark 4 for the course, and both tasks give mark 5.
 

@@ -3,10 +3,14 @@ from symbolic import *
 errors = 0
 
 def tests(exp,expected):
-    received = eval(exp)
-    if expected != received:
-        print(exp, ":", "expected", expected, "received", received)
-        global errors
+    global errors
+    try:
+        received = eval(exp)
+        if expected != received:
+            print(exp, ":", "expected", expected, "received", received)
+            errors += 1
+    except:
+        print(exp, ":", "failed")
         errors += 1
 
 def print_errors(e,part):

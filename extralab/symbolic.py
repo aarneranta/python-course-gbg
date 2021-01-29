@@ -19,11 +19,11 @@ def deriv_polynom(p): # TODO: return the derivative polynomial of p
 ###############################################
 
 def show_exp_infix(level,exp): # TODO: infix printing of expressions, minimizing parentheses
-    print("cannot show this expression yet")
+    return show_exp_prefix(exp)  # default behaviour, to be replaced
 
 
 def show_polynom(p): # TODO printing polynomials: use + or - between terms, ignore 0 terms, 1 coefficients, and * signs
-    print("cannot show this polynomial yet")
+    return p  # default behaviour, to be replaced
 
 
 ###############################################

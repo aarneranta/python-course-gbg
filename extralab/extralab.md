@@ -1,6 +1,6 @@
 # Extra Assignment: Symbolic Computation
 
-*Preliminary version: to be completed before official start!*
+*Preliminary version: to be checked before official start!*
 
 Aarne Ranta 2021
 
@@ -189,22 +189,106 @@ In particular, it can be helpful to
 
 ### Printing expressions and polynomials
 
+The first task is to print expressions in a "pretty" way, following the conventions of mathematical notation.
+In particular, **precedences** and **associativity** should be followed.
+The conventions can be specified by a BNF grammar, which is also followed by the parser given in `parse_symbolic.py`:
+```
+  <exp0> ::= <exp0> <op0> <exp1>
+           | <exp1>
+  <exp1> ::= <exp1> <op1> <exp2>
+           | <exp2>
+  <exp2> ::= <exp2> <op2> <exp3>
+           | <exp3>
+  <exp3> ::= <int>
+           | x
+           | ( <exp0> )
+  <op0>  ::= + | -
+  <op1>  ::= * | /
+  <op2>  ::= ^
+  <int>  ::= 0 | 1 | 2 | ...
+```
+The digits 0,1,2,3 in `<exp0>` etc are **precedence levels**.
+They grammar uses them in a precise way to express the following rules:
+- every expression has a precedence level (given by the left hand side of the BNF rule that produces it)
+- an expression of a higher level can always be used on a lower level
+- an expression of lower level can be used on a higher level by putting it in parentheses ()
+- every binary operator has a precedence level, which is the same as the level of the expression formed with it
+- every operator here is **left associative**, which means that for instance `1 + 2 + 3` is interpreted as `(1 + 2) + 3`
+
+The parser uses the precedence levels to group expressions in intended ways.
+Thus for instance
+```
+  2 + 3 * 4
+```
+is parsed like
+```
+  2 + (3 * 4)
+```
+rather than
+```
+  (2 + 3) * 4
+```
+because only this alternative is permitted by the grammar, which says that `*` has a higher precedence level than `+`.
+(You are welcome to test this by following the grammar rules by pencil an paper!)
+For the same reason, the optimal way to show the expression uses no parentheses.
+
+The function to be defined,
 ```
 def show_exp_infix(level,exp): # TODO: infix printing of expressions, minimizing parentheses
-    print("cannot show this expression yet")
+    return show_exp_prefix(exp)  # default behaviour, to be replaced
+```
+takes the intended precedence level as its first argument.
+When applied to an entire expression, level 0 is to be used.
+But in recursive calls, other levels are chosen depending on the precedence of the main operator and its arguments.
+Thus for instance the rule for printing addition expressions might look like this:
+```
+    show_exp_infix(0,arg[0]) + ' + ' + show_exp_infix(1,arg[1])
+```
+But you can of course cluster the operators in some smart way so that you don't need to write separate rules for every operator.
 
+Polynomials have a simpler grammar than arbitrary expressions:
+```
+  <poly> ::= <term>
+           | <term> <op> <poly>
+           | 0
+  <term> ::= <int2>? x
+           | <int2>? x ^ <int2>
+  <op>   ::= + | -
+  <int>  ::= 2 | 3 | 4 | ...
+```
+The main differences from the `<exp>` grammar are:
+- parentheses are not used
+- multiplication signs are not used (writing `3x` instead of `3*x`)
+- division is not used (because not allowed at all)
+- the integers 0 and 1 are not used (`1x` and `x^1` become `x`, `0x` and `x^0` just disappear)
+- but 0 is used to for printing the polynomials `[]` and `[0]`, which would otherwise become empty strings
 
-def show_polynom(p): # TODO printing polynomials: use + or - between terms, ignore 0 terms, 1 coefficients, and * signs
-    print("cannot show this polynomial yet")
+Your task is to write the following function:
+```
+def show_polynom(p): # TODO printing polynomials given as lists of coefficients of ascending powers
+    return p  # default behaviour, to be replaced
 ```
 
 
 
 ## The implementation
 
-You should write a python file `symbolic.py` that contains functions explained below. It can also contain some extra helper functions, but you are not allowed to import any libraries; as usual, you would be likely to find libraries that solve the whole problem for you, which is not what we want here.
+First make sure to run
+```
+  git clone https://github.com/aarneranta/python-course-gbg.git
+```
+to get the files needed in this task.
+The files are in the subdirectory `extralab/`.
 
-To help you in this task, we have created a stub file `symbolic.py`, which you can edit further.
+You should write a python file `symbolic.py` starting from the stub included in this directory.
+The file imports the `parse_symbolic.py`, from which you are like to need
+- `Exp`, the class of expressions
+- `add(x,y), sub(x,y), mul(x,y), div(x,y), pow(x,y), const(n), var()`, shorthands for `Exp` construction
+- `lex(s)`, lexer for converting strings to token lists
+- `show_exp_prefix(exp)`, showing trees as prefix expressions
+- `top_parse(toks)`, parsing a list of tokens to an `Exp` object
+
+You are not allowed to import any libraries; as usual, you would be likely to find libraries that solve the whole problem for you, which is not what we want here.
 
 Continuously with working on your file, you should run a test file, which reports errors. 
 When all tests pass, the run looks like this:
@@ -218,16 +302,13 @@ When all tests pass, the run looks like this:
 If you do both parts, you can moreover run your file with arbitrary input and demonstrate useful things with the `main` function given in `symbolic.py`:
 ```
   $ python3 symbolic.py 
-  enter expression> ((x + 5)^8)
-  tree: (^ (+ x 5) 8)
-  polynomial: [390625, 625000, 437500, 175000, 43750, 7000, 700, 40, 1]
-  first derivative: [625000, 875000, 525000, 175000, 35000, 4200, 280, 8]
-  second derivative: [875000, 1050000, 525000, 140000, 21000, 1680, 56]
+  enter expression> (x - 1)^3
+  tree: (^ (- x 1) 3)
+  derivative: (1 - 0) * ((x - 1) * (x - 1)) + (x - 1) * ((1 - 0) * (x - 1) + (x - 1) * (1 - 0))
+  polynomial: -1 + 3x - 3x^2 + x^3
+  derivative of polynomial: 3 - 6x + 3x^2
+  polynomial of derivative: 3 - 6x + 3x^2
+  second derivative: -6 + 6x
 ```
-
-### Part 1: symbolic computation
-
-
-
-### Part 2: printing and parsing
+You can use this function to run your own tests as you proceed.
 

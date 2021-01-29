@@ -157,7 +157,7 @@ def show_exp_prefix(exp):
 def top_parse(toks): 
     exp = eparse(0,toks)
     if toks:
-        print("parse error: unparsed tail",' '.join(rest))
+        print("parse error: unparsed tail",' '.join(toks))
     else:
         return exp
 

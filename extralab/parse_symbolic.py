@@ -69,7 +69,7 @@ def expect_token(expected,toks):
     if not toks:
         print("parse error: expected one of", expected, "found nothing")
     elif toks[0] in expected:
-        return toks[0],toks[1:]
+        return toks.pop(0)
     else:
         print("parse error: expected one of",expected, "found", toks[0])
 
@@ -102,47 +102,48 @@ def assoc(exp):
 def eparse(level,toks):
     while toks:
         if level == 0:
-            x,toks = eparse(1,toks)
+            x = eparse(1,toks)
             if not toks:
-                return x,toks
+                return x
             elif toks[0] in ['+','-']:
-                op,toks = toks[0],toks[1:]
-                y, toks = eparse(0,toks)
-                return(assoc(Exp(op,[x,y])),toks)
+                op = toks.pop(0)
+                y  = eparse(0,toks)
+                return assoc(Exp(op,[x,y]))
             else:
-                return (x,toks)
+                return x
             
         if level == 1:
-            x,toks = eparse(2,toks)
+            x = eparse(2,toks)
             if not toks:
-                return x,toks
+                return x
             elif toks[0] in ['*','/']:
-                op,toks = toks[0],toks[1:]
-                y, toks = eparse(1,toks)
-                return(assoc(Exp(op,[x,y])),toks)
+                op = toks.pop(0)
+                y  = eparse(1,toks)
+                return assoc(Exp(op,[x,y]))
             else:
-                return (x,toks)
+                return x
 
         if level == 2:
-            x,toks = eparse(3,toks)
+            x = eparse(3,toks)
             if not toks:
-                return x,toks
+                return x
             elif toks[0] in ['^']:
-                op,toks = toks[0],toks[1:]
-                y, toks = eparse(2,toks)
-                return(assoc(Exp(op,[x,y])),toks)
+                op = toks.pop(0)
+                y  = eparse(2,toks)
+                return assoc(Exp(op,[x,y]))
             else:
-                return (x,toks)
+                return x
 
         elif level == 3:
-            if toks[0] == '(':
-                x,toks = eparse(0,toks[1:])
-                p,toks = expect_token([')'],toks)
-                return (x,toks)
-            elif toks[0].isdigit():
-                return (const(toks[0]),toks[1:])
+            head = toks.pop(0)
+            if head == '(':
+                x = eparse(0,toks)
+                p = expect_token([')'],toks)
+                return x
+            elif head.isdigit():
+                return const(head)
             else:
-                return (var(),toks[1:])
+                return var()
 
 # convert Exp to LISP-like prefix string, e.g. (+ 2 x)
 def show_exp_prefix(exp): 
@@ -154,8 +155,8 @@ def show_exp_prefix(exp):
 
 # applied on top of a parser, returning Exp if the remaining token list is empty
 def top_parse(toks): 
-    exp,rest = eparse(0,toks)
-    if rest:
+    exp = eparse(0,toks)
+    if toks:
         print("parse error: unparsed tail",' '.join(rest))
     else:
         return exp

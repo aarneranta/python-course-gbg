@@ -47,13 +47,13 @@ At each node, the tree branches to two **subtrees**, which represent the argumen
 
 To give an example, the expression
 ```
-(x+1)^3
+(x - 1)^3
 ```
 is represented by the tree
 ```
         ^
       /   \
-     +     3
+     -     3
    /   \
   x     1
 ```
@@ -68,13 +68,19 @@ class Exp:
 ```
 by means of which the example can be constructed as
 ```
-  Exp('^',[Exp('+',[Exp('x',[]),Exp(1,[])]),Exp(3,[])])
+  Exp('^',[Exp('-',[Exp('x',[]),Exp(1,[])]),Exp(3,[])])
 ```
 The class is defined in the module `parse_symbolic.py`, which also defines shorthands for each form of expression.
 This Exp tree can thus equivalently be built as
 ```
-  pow(add(var(),const(1)),const(3))
+  pow(sub(var(),const(1)),const(3))
 ```
+Yet another common way to show expression trees is as **prefix expressions**, where operators precede their arguments, and each subtree (except the leaves) is enclosed in parentheses:
+```
+  (^ (- x 1) 3)
+```
+This representation can be produced by `parse_symbolic.show_exp_prefix()`. 
+
 The Exp class has two variables: an **operator** and its **argument list**.
 The arguments in the list are expected to be Exp objects themselves, which means that trees are a **recursive data structure**.
 The operator could be a Python object of any type, but we will assume it to be either a string or an integer.
@@ -88,24 +94,60 @@ Since Exp is a recursive datatype, many of the functions needed to operate on Ex
 
 ### Symbolic differentiation
 
+Differentiation rules are familiar from calculus text books and also stated in https://en.wikipedia.org/wiki/Differentiation_rules.
+The *derivative* *e'* of an expression *e* is defined as follows.
+- *n'* = 0
+- *x'* = 1
+- (*f + g*)' = *f' + g'*
+- (*f - g*)' = *f' - g'*
+- (*f* * *g*)' = *f'* * *g* + *f* * *g'*
+- (*f / g*)' = (*f'* * *g* - *f* * *g'*)/*g* * *g*
+- (*f^n*)' = (*f* * *f^(n-1)*)'  if *n* is a non-negative integer
+
+This is a recursive definition over expression trees.
+The reason why it looks simpler than in many other sources is that we have assumed the expressions always to have *x* as their only variable.
+Another simplification is that we have treated exponentiation only in a special case, where the exponent is integer.
+
+Your first task is to define this function in Python.
+The definition will look as follows:
+```
+def derivative(exp):
+    op,args = exp.parts()
+    if op == '+':
+	    f,g = args[:2]
+        return add(derivative(f),derivative(g))
+```
+The function performs **pattern matching** on the operator, calls itself on the arguments, and combines the results by using appropriate operators.
+
+When performed by using the recursive rules, differentiation produces very complex expressions.
+For instance,
+```
+  (x - 1)^3 ==> (1 - 0) * ((x - 1) * (x - 1)) + (x - 1) * ((1 - 0) * (x - 1) + (x - 1) * (1 - 0))
+```
+by just following the rules.
+This expression can of course be simplified, down to the polynomial form
+```
+  3 - 6x + 3x^2
+```
+The simplification to polynomials is our next task.
 
 
 ### Converting expressions to polynomials
 
-Polynomials with one variable, as familiar from Lab 3, admit a simple internal representation: as lists of coefficients for each power of the variable, representing their sum.
+Polynomials with one variable, as familiar from Lab 3, admit of a simple, non-recursive internal representation: as lists of coefficients for each power of the variable, representing their sum.
 Thus the polynomial
 ```
-2 - 3x^2 + x^3
+-1 + 3x - 3x^2 + x^3
 ```
 can be represented by the list
 ```
-[2, 0, -3, 1]
+[-1, 3, -3, 1]
 ```
-Notice that we write the list in the *ascending order* of powers, which makes it easy to relate the positions to exponents: the number at position *n* is the coefficient of *x^n*.
+Notice that we write polynomials in the *ascending order* of powers, which makes it easy to relate the positions to exponents: the number at position *n* is the coefficient of *x^n*.
 
-Polynomials represented in this way have a simple method for differentiation, corresponding to the rules
-- if `f(x) = ax^n`, then `f'(x) = nax^(n-1)` (which becomes 0 if `n = 0`)
-- if `f(x) = g(x) + h(x)`, then `f'(x) = g'(x) + h'(x)`
+Polynomials represented in this way have a simple method for differentiation, corresponding to rules derivable from the general ones:
+- *(ax^n)*' = *nax^(n-1)*   (which becomes 0 if `n = 0`)
+- (*f + ... + g*)' = *f' + ... + g'*
 
 
 Your second task is to define the derivative of polynomials,
@@ -115,23 +157,47 @@ def deriv_polynom(poly): # your task
 ```
 This should for instance satisfy
 ```
-deriv_polynom([2,0,-3,1]) == [0,-6,3]
+deriv_polynom([-1,3,-3,1]) == [3,-6,3]
 ```
 
-Algebraic expressions in general need not be polynomials, but can be formed by the operators in arbitrary ways. An example is
+Algebraic expressions in general need not be polynomials, but can be formed by the operators in arbitrary ways. Our example
 ```
-(x + 1)^3
+(x - 1)^3
 ```
-which can, however, be *simplified* to a polynomial,
+is a case in point. It can, however, be *simplified* to a polynomial,
 ```
-1 + 3x + 3x^2 + x^3
+- 1 + 3x - 3x^2 + x^3
 ```
-The simplification process is another task that we address in this assignment:
+The simplification process is another task that we address as the third task of this assignment:
 ```
 def exp2polynom(exp): # your task
     # convert arbitrary expressions to polynomials
 ```
-This is a tricky function...
+This is a tricky function, and we will not expect it to be defined for arbitrary expressions.
+We will exclude
+- division (possible for some division expressions, e.g. `6*x/2`, but not in general)
+- exponentiation with other than non-negative integer powers
+
+When it comes to division, our differentiation function still gives a result, but this is in general not a polynomial.
+
+The `exp2polynom()` function is of course a recursive function.
+It can be convenient to make it call helper functions.
+In particular, it can be helpful to
+- first simplify the expression to a sum of terms of the form `ax^n`, represented as pairs `(n,a)`
+- then sort these terms by the exponent and combine terms with the same exponent (hint: using a dictionary data structure indexed on the exponent has proven helpful!)
+
+
+### Printing expressions and polynomials
+
+```
+def show_exp_infix(level,exp): # TODO: infix printing of expressions, minimizing parentheses
+    print("cannot show this expression yet")
+
+
+def show_polynom(p): # TODO printing polynomials: use + or - between terms, ignore 0 terms, 1 coefficients, and * signs
+    print("cannot show this polynomial yet")
+```
+
 
 
 ## The implementation
@@ -161,72 +227,7 @@ If you do both parts, you can moreover run your file with arbitrary input and de
 
 ### Part 1: symbolic computation
 
-In this part, you have to define the following functions:
-```
-  def deriv_polynom(p): ...
-  # deriv_polynom([1,2,3]) == [2,6]
-
-  def exp2polynom(exp): ...
-  # exp2polynom(pow(add(var(),const(1)),const(3))) == [1, 3, 3, 1]
-```
-You must use the class `Exp` as defined above. Since no parser is assumed in Part 1, it is handy to define some helper functions to construct expressions to be able to test your code easily. The second example above uses some such functions, and you should define the following:
-```
-def app(op,x,y):
-    return Exp(op,[x,y])
-
-def add(x,y):
-    return app("+",x,y)
- # and so on for all binary operators: add, sub, mul, pow
-
-def var():
-    return Exp("x",[])
-
-def const(n):
-    return Exp(int(n),[])
-```
-The `exp2polynom()` function itself is a recursive function that can call helper functions. For instance, it can be helpful to
-- first simplify the expression to a sum of terms of the form `ax^n`
-- then sort these terms by the exponent and combine terms with the same exponent (hint: using a dictionary data structure indexed on the exponent has proven helpful!)
 
 
 ### Part 2: printing and parsing
-
-We start with the easier part: printing, i.e. conversing Exp trees into strings.
-The above BNF grammar defines *infix* strings, where binary operators are put between their two arguments.
-```
-# convert Exp to infix string, e.g. (2 + x); separate the operator and its arguments by spaces
-def show_exp_infix(exp): 
-    print("show_exp_infix TODO")
-```
-Spaces are required for a more readable output and also to simplify testing.
-
-Another way of printing is as *prefix* strings, where operators are put before their arguments.
-```
-# convert Exp to prefix string, e.g. (+ 2 x); separate the operator and its arguments by spaces
-def show_exp_prefix(exp): 
-    print("show_exp_prefix TODO")
-```
-This output is often shown to make the tree structure explicit in a systematic way.
-It is also the notation used in the programming language LISP created in the 1950s: the idea was that programmers should write directly in abstract syntax to make the language easier to compile!
-
-
-Converting string input into an Exp tree is divided to a *lexer* and a *parser*
-```
-def lex(string): # returns a list of tokens
-
-def parse(tokens): # returns an object of class Exp
-```
-The lexer works very much the same way as tokenization in Lab 1.
-It scans strings to find tokens of the following kinds:
-- operators `+ - * ^`
-- parentheses `( )` 
-- positive integer literals (sequences of digits), e.g. `1987`
-- the variable `x`
-- spaces are allowed anywhere except inside integer literals, but not included in the token list returned
-
-Characters other than these should stop the process and report a *lexer error*. 
-It is enough just to print an error message and return an empty list of tokens.
-
-These are given in `parse_symbolic.py`
-
 

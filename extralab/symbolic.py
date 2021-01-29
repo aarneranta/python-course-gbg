@@ -41,11 +41,11 @@ def main(): #
     poly = exp2polynom(exp)
     print("polynomial:", show_polynom(poly))
     der = deriv_polynom(poly)
-    print("derivative of polynomial:", show_polynom(poly))
+    print("derivative of polynomial:", show_polynom(der))
     polydert = exp2polynom(dert)
-    print("polynomial of derivative:", show_polynom(poly))
+    print("polynomial of derivative:", show_polynom(polydert))
     der2 = deriv_polynom(der)
-    print("second derivative:", show_polynom(poly))
+    print("second derivative:", show_polynom(der2))
 
 if __name__ == "__main__":
     main()

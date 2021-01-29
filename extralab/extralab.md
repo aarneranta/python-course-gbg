@@ -9,27 +9,91 @@ Aarne Ranta 2021
 Symbolic computation is computation with mathematical expressions, instead of numbers. The result is a simple **computer algebra system**.
 
 Typical examples of symbolic computation include:
-- **symbolic derivation**: convert the polymonial `x^2 + 3x + 1` to `2x + 3`
-- **simplification**: convert `(x+1)^3` to the polynomial form `x^3 + 3x^2 + 3x + 1`
+- **symbolic differentiation**: convert the polymonial `1 + 3x + x^2` to its derivative `3 + 2x`
+- **simplification**: convert `(x+1)^3` to the polynomial form `1 + 3x + 3x^2 + x^3`
 
 (We use the operator `^` for exponentiation, as is customary for mathematical text processing systems such as LaTeX.)
 
-In this assignment, we will do both these things. In addition, a user-friendly system needs
-- *parsing*: convert a string to an internal data object that represents expressions in a way that supports symbolic computation.
-- *printing*: convert the internal representation back to a user-readable string.
+In this assignment, we will do both these things.
+They could in principle be defined in terms of strings, such as the ones shown above, since this is what the user of the system will probably like to read and write.
+However, derivation and simplification of strings directly would be complicated, and it is easier to use an internal representation of expressions as data objects that support symbolic computation better. 
+Therefore, a user-friendly system also needs
+- **parsing**: convert the user's string input to an internal representation,
+- **printing**: convert internal representations to a user-readable strings.
 
 Parsing would be a bit too much for this assignment and will be provided by an external module `parse_symbolic.py`.
 Your task is divided into two subtasks as follows:
-1. **Task 1**: symbolic computation on internal representations (abstract syntax trees)
+1. **Task 1**: symbolic computation on internal representations
 2. **Task 2**: printing expressions in a nice way
 
-The tasks can be done independently of each other. Completing one of the tasks is enough for mark 4 for the course, and both tasks give mark 5.
+The tasks can be done independently of each other. Completing one of the tasks is enough for mark 4 for the course.
+Completing both tasks gives mark 5.
 
 
 
-### Polynomials and derivation
+### Arbitrary expressions and abstract syntax trees
 
-Polynomials with one variable, as familiar from Lab 3, admit a simple internal representation: as lists of coefficients for each power of the variable, representing their sum. Thus the polynomial
+We will work with following forms of expressions:
+- 'a + b' (addition)
+- 'a - b' (subtraction)
+- 'a * b' (multiplication)
+- 'a / b' (division)
+- 'a ^ b' (exponentiatio)
+- *n* (non-negative integer literal)
+- `x` (the variable x)
+
+Expressions formed from these components naturally form **trees**, where the operators (`+ - * / ^`) are **nodes** and integer literals and variables are **leaves**.
+At each node, the tree branches to two **subtrees**, which represent the arguments of the operator.
+
+To give an example, the expression
+```
+(x+1)^3
+```
+is represented by the tree
+```
+        ^
+      /   \
+     +     3
+   /   \
+  x     1
+```
+The Python representation we use for expression trees is the class
+```
+class Exp:
+    def __init__(self,op,args):
+        self.op = op
+        self.args = args
+    def parts(self):
+        return self.op, self.args
+```
+by means of which the example can be constructed as
+```
+  Exp('^',[Exp('+',[Exp('x',[]),Exp(1,[])]),Exp(3,[])])
+```
+The class is defined in the module `parse_symbolic.py`, which also defines shorthands for each form of expression.
+This Exp tree can thus equivalently be built as
+```
+  pow(add(var(),const(1)),const(3))
+```
+The Exp class has two variables: an **operator** and its **argument list**.
+The arguments in the list are expected to be Exp objects themselves, which means that trees are a **recursive data structure**.
+The operator could be a Python object of any type, but we will assume it to be either a string or an integer.
+If the operator is an integer literal or a variable, the list of arguments is expected to be empty.
+For other operators, it is expected to contain two Exp objects.
+
+(In literature, one can find more complicated classes to represent abstract syntax, usually posing more restrictions on valid expressions, e.g. what operators are valid. But this simple Exp class is enough for our purposes - and actually general enough for any purposes.)
+
+Since Exp is a recursive datatype, many of the functions needed to operate on Exp are **recursive functions**.
+
+
+### Symbolic differentiation
+
+
+
+### Converting expressions to polynomials
+
+Polynomials with one variable, as familiar from Lab 3, admit a simple internal representation: as lists of coefficients for each power of the variable, representing their sum.
+Thus the polynomial
 ```
 2 - 3x^2 + x^3
 ```
@@ -44,7 +108,7 @@ Polynomials represented in this way have a simple method for differentiation, co
 - if `f(x) = g(x) + h(x)`, then `f'(x) = g'(x) + h'(x)`
 
 
-Your first task is to define the derivative of polynomials,
+Your second task is to define the derivative of polynomials,
 ```
 def deriv_polynom(poly): # your task
     # return the polynomial that is the derivative f'(x) of a polynomial f(x) 
@@ -53,8 +117,6 @@ This should for instance satisfy
 ```
 deriv_polynom([2,0,-3,1]) == [0,-6,3]
 ```
-
-### Arbitrary expressions and abstract syntax trees
 
 Algebraic expressions in general need not be polynomials, but can be formed by the operators in arbitrary ways. An example is
 ```
@@ -69,81 +131,8 @@ The simplification process is another task that we address in this assignment:
 def exp2polynom(exp): # your task
     # convert arbitrary expressions to polynomials
 ```
-What is the internal representation of arbitrary expressions? A moment's reflection shows that simplification (and indeed all symbolic computation) would be extremely complicated if carried out directly on strings. The proper format, used in computer algebra systems and also in compilers for programming languages, is **trees**, also known as **abstract syntax trees** when representing the structure of expressions.
+This is a tricky function...
 
-In Python, we can implement abstract syntax trees as a class with two variables: an **operator** and its **argument list**. The arguments in the list are expected to be expression trees themselves, which means that trees are a **recursive data structure**.
-
-In this assignment, we will assume that you use the following class for expressions:
-```
-class Exp: # given: just copy this class to your code
-
-    def __init__(self,op,args):
-        self.op = op
-        self.args = args
-
-    def parts(self):
-        return self.op, self.args
-```
-Thus an expression consists of an *operator* and a list of *arguments*.
-The operator could be a Python object of any type, but we will assume it to be either a string or an integer.
-The arguments will be assumed to be Exp objects themselves.
-In compilers, one can find more complicated classes to represent abstract syntax, usually posing more restrictions on valid expressions. 
-But this simple Exp class is enough for our purposes. 
-
-Notice that the list of arguments can be empty; this is the case when we represent *atomic expressions* such as *numeric constants* and *variable symbols*. Thus the tree for representing the expression
-```
-(x+1)^3
-```
-is give by
-```
-Exp('^',[Exp('+',[Exp('x',[]),Exp(1,[])]),Exp(3,[])])
-```
-A more graphical way of representing it is as a graph looking like an upside-down tree, where the op parts are *nodes* and each argument tree is a *branch*:
-```
-        ^
-      /   \
-     +     3
-   /   \
-  x     1
-```
-Since Exp is a recursive datatype, many of the functions needed to operate on Exp are *recursive functions*.
-
-
-
-### Converting expressions to polynomials
-
-Defining the derivation of polynomials is a part of Task 1 - the easy part.
-A more tricky part is the conversion of arbitrary expressions (of class `Exp`) to polynomials. To make this viable in the given timeframe, we restrict `Exp` to a few forms that can always be converted to polynomials. This set of expression is defined by the following BNF grammar:
-```
-<exp> ::= <int>
-<exp> ::= x
-<exp> ::= ( <exp> <op> <exp> )
-<exp> ::= ( <exp> ^ <int> )
-<op>  ::= + | - | *
-<int> ::= 0 | 1 | 2 | ... | 123 | ...
-```
-In other words,
-- expressions are built from positive integer literals and the variable `x`
-- two expressions can be combined with a binary operator `+`, `-`, or `*`, with parentheses around the combination
-- an expression can be raised to a positive integer power, with parentheses around the combination
-
-The restriction to positive integers as powers is made to guarantee that the conversion to polynomials always works. 
-The division operator is left out for the same reason.
-
-The addition of parentheses around all applications of a binary operator (including exponentiation) is there to help parsing; relaxing this with the standard operator precedence rules would be possible but a bit too much for this lab.
-
-Since extra parentheses is required by the grammar, the expression `(2x - 3)^4` is written
-```
-(((2*x)-3)^4)
-```
-Its conversion to a polynomial is
-```
-81 - 216x + 216x^2 - 96x^3 + 16x^4
-```
-in the internal list representation
-```
-[81, -216, 216, -96, 16]
-```
 
 ## The implementation
 
@@ -238,51 +227,6 @@ It scans strings to find tokens of the following kinds:
 Characters other than these should stop the process and report a *lexer error*. 
 It is enough just to print an error message and return an empty list of tokens.
 
-Since the lexer is familiar from Lab 1, just simpler, it should be an easy task.
-But the parser requires much more thinking.
-The simplest way to implement it is by the method of *recursive descent*, which builds an `Exp` tree by building subtrees and combining them in ways that depends on the tokens seen.
-The parser returns both an `Exp` and a list of remaining tokens, i.e. the tokens that the parser should continue with.
-The simplest case is a parser that just checks if the first token belongs to a list of expected tokens:
-```
-# auxiliary for parsing: return the first token if it is an expected one and move to the next token
-def expect_token(expected,toks):
-    if not toks:
-        print("parse error: expected one of", expected, "found nothing")  # expects at least one token
-    elif toks[0] in expected:
-        return toks[0],toks[1:]        # finds an expected token, returns it, and move to next item
-    else:
-        print("parse error: expected one of",expected, "found", toks[0])  # found some other token
-```
-As a more complex example, the stub `symbolic.py` provides a parser for prefix expressions:
-```
-# parse prefix expressions e.g. (+ x 2), returning Exp,remaining_token_list
-def tparse(toks):  # given as example of recursive descent parsing
-  while toks:
-    if toks[0] == '(':           # if the first token is '(' an operator application is expected
-        toks = toks[1:]            # go to the second token
-        op,toks = expect_token(["+","-","*","^"],toks) # try to find an operator
-        x,toks = tparse(toks)                          # after that, parse its first argument
-        y,toks = tparse(toks)                          # after that, parse its first argument
-        p,toks = expect_token([')'],toks)              # make sure a closing ')' comes next
-        return (Exp(op,[x,y]),toks)                    # return the operator application
-    elif toks[0].isdigit():               # if the first token is a numeric constant...
-        return (const(toks[0]),toks[1:])  # ...return the atomic tree
-    else:
-        return (var(),toks[1:])           # in all other cases, treat the first token as a variable
-```
-Your task is to write the corresponding function for infix expressions,
-```
-# parse infix expressions e.g. (x + 2), returning Exp, and remaining token list
-def parse(toks): # TODO: recursive descent parser
-    print("parse TODO")
-```
-To complete the task, we need a top parser function, which takes a parser (a function from token lists to pairs of expressions and remaining tokens) and returns an expression, *provided that the list of remaining tokens is empty*. 
-Thus it will for instance reject the result of parsing `(x + 2))`, which as an extra parentheses at the end.
-```
-# applied on top of a parser, returning Exp if the remaining token list is empty
-def top_parse(parser,toks): # TODO: parse with parser, and if no tokens remain, return tree, otherwise error
-    print("top_parse TODO")
-```
-
+These are given in `parse_symbolic.py`
 
 

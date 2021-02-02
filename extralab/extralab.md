@@ -1,6 +1,6 @@
 # Extra Assignment: Symbolic Computation
 
-*Preliminary version: to be checked before official start!*
+*Version 1.0 Some changes possible in the text and support files, but the task specification is now final.*
 
 Aarne Ranta 2021
 
@@ -27,7 +27,7 @@ Your task is divided into two subtasks as follows:
 2. **Task 2**: printing expressions in a nice way
 
 The tasks can be done independently of each other. Completing one of the tasks is enough for mark 4 for the course.
-Completing both tasks gives mark 5.
+Completing both tasks gives mark 5. 
 
 
 
@@ -38,7 +38,7 @@ We will work with following forms of expressions:
 - 'a - b' (subtraction)
 - 'a * b' (multiplication)
 - 'a / b' (division)
-- 'a ^ b' (exponentiatio)
+- 'a ^ b' (exponentiation)
 - *n* (non-negative integer literal)
 - `x` (the variable x)
 
@@ -96,17 +96,18 @@ Since Exp is a recursive datatype, many of the functions needed to operate on Ex
 
 Differentiation rules are familiar from calculus text books and also stated in https://en.wikipedia.org/wiki/Differentiation_rules.
 The *derivative* *e'* of an expression *e* is defined as follows.
-- *n'* = 0
-- *x'* = 1
 - (*f + g*)' = *f' + g'*
 - (*f - g*)' = *f' - g'*
 - (*f* * *g*)' = *f'* * *g* + *f* * *g'*
 - (*f / g*)' = (*f'* * *g* - *f* * *g'*)/*g* * *g*
-- (*f^n*)' = (*f* * *f^(n-1)*)'  if *n* is a non-negative integer
+- (*f^n*)' = (*f* * ... * *f*)'  (*f* multiplied by itself *n* times)
+- *n*' = 0 for integer literals
+- *x*' = 1 for the variable *x*
+
 
 This is a recursive definition over expression trees.
 The reason why it looks simpler than in many other sources is that we have assumed the expressions always to have *x* as their only variable.
-Another simplification is that we have treated exponentiation only in a special case, where the exponent is integer.
+Another simplification is that we have treated exponentiation only in the special case where the exponent is an integer.
 
 Your first task is to define this function in Python.
 The definition will look as follows:
@@ -114,10 +115,13 @@ The definition will look as follows:
 def derivative(exp):
     op,args = exp.parts()
     if op == '+':
-	    f,g = args[:2]
+        f,g = args[:2]
         return add(derivative(f),derivative(g))
+    elif op == '-':
+        ....
 ```
 The function performs **pattern matching** on the operator, calls itself on the arguments, and combines the results by using appropriate operators.
+You will need one if/elif branch for each form of expression, corresponding to the seven differentiation rules stated above.
 
 When performed by using the recursive rules, differentiation produces very complex expressions.
 For instance,
@@ -173,8 +177,8 @@ The simplification process is another task that we address as the third task of 
 def exp2polynom(exp): # your task
     # convert arbitrary expressions to polynomials
 ```
-This is a tricky function, and we will not expect it to be defined for arbitrary expressions.
-We will exclude
+This is a tricky function, and we will not expect it to be defined for all expressions.
+Thus we will exclude
 - division (possible for some division expressions, e.g. `6*x/2`, but not in general)
 - exponentiation with other than non-negative integer powers
 
@@ -183,8 +187,18 @@ When it comes to division, our differentiation function still gives a result, bu
 The `exp2polynom()` function is of course a recursive function.
 It can be convenient to make it call helper functions.
 In particular, it can be helpful to
-- first simplify the expression to a sum of terms of the form `ax^n`, represented as pairs `(n,a)`
+- first simplify the expression to a sum of terms of the form `ax^n`, represented as a list of pairs `(n,a)`
 - then sort these terms by the exponent and combine terms with the same exponent (hint: using a dictionary data structure indexed on the exponent has proven helpful!)
+
+The first step can be implemented by pattern matching on the operator just like differentiation.
+But we leave it to you to decide what kind of rules exactly to apply.
+As an example, the simplification rule for addition may look as follows, if you follow the advice of returning a list of pairs:
+```
+    if op == '+':
+        f,g = args[:2]
+        return simplify(f) + simplify(g)
+```
+where the latter `+` is concatenation of lists.
 
 
 ### Printing expressions and polynomials
@@ -248,10 +262,12 @@ But you can of course cluster the operators in some smart way so that you don't 
 
 Polynomials have a simpler grammar than arbitrary expressions:
 ```
-  <poly> ::= <term>
-           | <term> <op> <poly>
+  <poly> ::= -? <term>
+           | <poly> <op> <term>
            | 0
-  <term> ::= <int2>? x
+	   | 1
+  <term> ::= <int2>
+           | <int2>? x
            | <int2>? x ^ <int2>
   <op>   ::= + | -
   <int2> ::= 2 | 3 | 4 | ...
@@ -262,6 +278,8 @@ The main differences from the `<exp>` grammar are:
 - division is not used (because not allowed at all)
 - the integers 0 and 1 are not used (`1x` and `x^1` become `x`, `0x` and `x^0` just disappear)
 - but 0 is used to for printing the polynomials `[]` and `[0]`, which would otherwise become empty strings
+- likewise, 1 is used for the polynomial `[1]`  
+- if the first token is `+` it is omitted
 
 Your task is to write the following function:
 ```
@@ -310,5 +328,6 @@ If you do both parts, you can moreover run your file with arbitrary input and de
   polynomial of derivative: 3 - 6x + 3x^2
   second derivative: -6 + 6x
 ```
-You can use this function to run your own tests as you proceed.
+You can use this function to run your own tests as you proceed. 
+It will even work if you have only done Part 1, but printing will then use the predefined defaults, which don't look quite as nice.
 

@@ -48,7 +48,7 @@ def lex(s): # TODO: lexer for algebraic expressions, from string to token list
     toks = []
     while s:
         head = s[0]
-        if head in "( ) [ ] x + - * ^".split():
+        if head in "( ) [ ] x + - * ^ /".split():
             toks.append(head)
             s = s[1:]
         elif head.isspace():

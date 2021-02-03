@@ -122,6 +122,7 @@ def derivative(exp):
 ```
 The function performs **pattern matching** on the operator, calls itself on the arguments, and combines the results by using appropriate operators.
 You will need one if/elif branch for each form of expression, corresponding to the seven differentiation rules stated above.
+A complete example of pattern matching is shown in the `value()` function in `parse_symbolic.py`, which calculates the value of a polynomial for a given value of the variable `x`.
 
 When performed by using the recursive rules, differentiation produces very complex expressions.
 For instance,
@@ -328,6 +329,10 @@ If you do both parts, you can moreover run your file with arbitrary input and de
   polynomial of derivative: 3 - 6x + 3x^2
   second derivative: -6 + 6x
 ```
+It also shows a plot of the function, using Matplotlib in the same way as Lab3:
+
+![Plot](https://github.com/aarneranta/python-course-gbg/blob/master/extralab/plot-exp.png)
+
 You can use this function to run your own tests as you proceed. 
 It will even work if you have only done Part 1, but printing will then use the predefined defaults, which don't look quite as nice.
 

@@ -122,7 +122,8 @@ def derivative(exp):
 ```
 The function performs **pattern matching** on the operator, calls itself on the arguments, and combines the results by using appropriate operators.
 You will need one if/elif branch for each form of expression, corresponding to the seven differentiation rules stated above.
-A complete example of pattern matching is shown in the `value()` function in `parse_symbolic.py`, which calculates the value of a polynomial for a given value of the variable `x`.
+A complete example of pattern matching is shown in the `value()` function in `parse_symbolic.py`, which calculates the value of an expression for a given value of the variable `x`.
+You can use the code for that function as a template for all recursive functions on expressions.
 
 When performed by using the recursive rules, differentiation produces very complex expressions.
 For instance,

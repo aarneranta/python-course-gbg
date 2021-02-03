@@ -202,7 +202,7 @@ def top_parse(toks):
 import matplotlib.pyplot as plt
 
 def show_graph(exp):
-    xyvalues = [(x,value(exp,x)) for x in range(-10,11)]
+    xyvalues = [(x/10,value(exp,x/10)) for x in range(-100,101)]
     xvalues = []
     yvalues = []
     while xyvalues:

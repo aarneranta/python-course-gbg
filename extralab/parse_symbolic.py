@@ -132,50 +132,25 @@ def assoc(exp):
 
 def eparse(level,toks):
     while toks:
-        if level == 0:
-            x = eparse(1,toks)
+        if level < 3:
+            x = eparse(level+1,toks)
             if not toks:
                 return x
-            elif toks[0] in ['+','-']:
+            elif op_level(toks[0]) == level:
                 op = toks.pop(0)
-                y  = eparse(0,toks)
+                y  = eparse(level,toks)
                 return assoc(Exp(op,[x,y]))
             else:
                 return x
-            
-        if level == 1:
-            x = eparse(2,toks)
-            if not toks:
-                return x
-            elif toks[0] in ['*','/']:
-                op = toks.pop(0)
-                y  = eparse(1,toks)
-                return assoc(Exp(op,[x,y]))
-            else:
-                return x
-
-        if level == 2:
-            x = eparse(3,toks)
-            if not toks:
-                return x
-            elif toks[0] in ['^']:
-                op = toks.pop(0)
-                y  = eparse(2,toks)
-                return assoc(Exp(op,[x,y]))
-
-            else:
-                return x
-
         elif level == 3:
             head = toks.pop(0)
             if head == '(':
                 x = eparse(0,toks)
                 p = expect_token([')'],toks)
                 return x
-            elif head == '-':
+            elif head == '-': ## extra syntactic sugar, not in the grammar
                 x = eparse(3,toks)
                 return sub(const(0),x)
-
             elif head.isdigit():
                 return const(head)
             else:

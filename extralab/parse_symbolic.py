@@ -53,16 +53,23 @@ def value(exp,x):
         return float(x)
 
     f,g = args[:2]
+    vfx = value(f,x)
+    vgx = value(g,x)
+    if vfx is None or vgx is None:
+        return None
     if op == '+':
-        return value(f,x) + value(g,x)
+        return vfx + vgx
     elif op == '-':
-        return value(f,x) - value(g,x)
+        return vfx - vgx
     elif op == '*':
-        return value(f,x) * value(g,x)
+        return vfx * vgx
     elif op == '/':
-        return value(f,x) / value(g,x)
+        if vgx == 0:
+            return None
+        else:
+            return vfx / vgx
     elif op == '^':
-        return value(f,x) ** value(g,x)
+        return vfx ** vgx
     else:
         print("cannot evaluate this expression")
 
@@ -111,7 +118,7 @@ def op_level(op):
 def assoc(exp):
     op1,xyz = exp.parts()
     level = op_level(op1)
-    if level < 2:
+    if level < 3:
         x,exp2 = xyz
         op2,yz = exp2.parts()
         if op_level(op2) == level:
@@ -155,6 +162,7 @@ def eparse(level,toks):
                 op = toks.pop(0)
                 y  = eparse(2,toks)
                 return assoc(Exp(op,[x,y]))
+
             else:
                 return x
 
@@ -164,6 +172,10 @@ def eparse(level,toks):
                 x = eparse(0,toks)
                 p = expect_token([')'],toks)
                 return x
+            elif head == '-':
+                x = eparse(3,toks)
+                return sub(const(0),x)
+
             elif head.isdigit():
                 return const(head)
             else:
@@ -190,8 +202,18 @@ def top_parse(toks):
 import matplotlib.pyplot as plt
 
 def show_graph(exp):
-    xvalues = range(-10,11)
-    yvalues = [value(exp,x) for x in xvalues]
+    xyvalues = [(x,value(exp,x)) for x in range(-10,11)]
+    xvalues = []
+    yvalues = []
+    while xyvalues:
+        (x,y) = xyvalues.pop(0)
+        if y is None:
+            plt.plot(xvalues, yvalues)
+            xvalues = []
+            yvalues = []
+        else:
+            xvalues.append(x)
+            yvalues.append(y)
     plt.plot(xvalues, yvalues)
     plt.show()
     

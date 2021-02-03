@@ -30,22 +30,29 @@ def show_polynom(p): # TODO printing polynomials: use + or - between terms, igno
 ## The main function: test with your own input
 ###############################################
 
-# the main function: input infix expression, show tree, polynomial, and 1st and 2nd derivatives
-def main(): # 
+# the main function: input infix expression, show tree, polynomial, 1st and 2nd derivatives, and the graph
+def main(): # given, don't change
     s = input("enter expression> ")
     toks = lex(s)
     exp = top_parse(toks)
     print("tree:", show_exp_prefix(exp))
-    dert = derivative(exp)
-    print("derivative:", show_exp_infix(0,dert))
-    poly = exp2polynom(exp)
-    print("polynomial:", show_polynom(poly))
-    der = deriv_polynom(poly)
-    print("derivative of polynomial:", show_polynom(der))
-    polydert = exp2polynom(dert)
-    print("polynomial of derivative:", show_polynom(polydert))
-    der2 = deriv_polynom(der)
-    print("second derivative:", show_polynom(der2))
-
+    try:
+        dert = derivative(exp)
+        print("derivative:", show_exp_infix(0,dert))
+    except:
+        print("derivative not available")
+    try:
+        poly = exp2polynom(exp)
+        print("polynomial:", show_polynom(poly))
+        der = deriv_polynom(poly)
+        print("derivative of polynomial:", show_polynom(der))
+        polydert = exp2polynom(dert)
+        print("polynomial of derivative:", show_polynom(polydert))
+        der2 = deriv_polynom(der)
+        print("second derivative:", show_polynom(der2))
+    except:
+        print("polynomial not defined")
+    show_graph(exp)
+    
 if __name__ == "__main__":
     main()

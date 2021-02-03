@@ -43,6 +43,30 @@ def is_var(exp): # given: decide if an Exp is the variable x
     return (op == 'x') and (not args)
 
 
+# example of pattern matching: the value of an expression for a given value of x
+def value(exp,x):
+    op,args = exp.parts()
+    
+    if is_const(exp):
+        return float(op)
+    elif is_var(exp):
+        return float(x)
+
+    f,g = args[:2]
+    if op == '+':
+        return value(f,x) + value(g,x)
+    elif op == '-':
+        return value(f,x) - value(g,x)
+    elif op == '*':
+        return value(f,x) * value(g,x)
+    elif op == '/':
+        return value(f,x) / value(g,x)
+    elif op == '^':
+        return value(f,x) ** value(g,x)
+    else:
+        print("cannot evaluate this expression")
+
+
 # lexer applied to input string before parser
 def lex(s): # TODO: lexer for algebraic expressions, from string to token list
     toks = []
@@ -161,3 +185,13 @@ def top_parse(toks):
     else:
         return exp
 
+# bonus: printing the graph of a function
+
+import matplotlib.pyplot as plt
+
+def show_graph(exp):
+    xvalues = range(-10,11)
+    yvalues = [value(exp,x) for x in xvalues]
+    plt.plot(xvalues, yvalues)
+    plt.show()
+    

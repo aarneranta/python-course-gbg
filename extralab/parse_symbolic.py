@@ -115,33 +115,32 @@ def op_level(op):
     else:
         return 3
 
-def assoc(exp):
-    op1,xyz = exp.parts()
-    level = op_level(op1)
-    if level < 3:
-        x,exp2 = xyz
-        op2,yz = exp2.parts()
-        if op_level(op2) == level:
-            y,z = yz
-            return assoc(Exp(op2, [Exp(op1,[x, y]),z]))
-        else:
-            return exp
-    else:
-        return exp
-    
 
 def eparse(level,toks):
+    
+    def eparses(level,toks):
+        if not toks:
+            return []
+        elif op_level(toks[0]) == level:
+            op = toks.pop(0)
+            x  = eparse(level+1,toks)
+            xs = eparses(level,toks)
+            return [op,x] + xs
+        else:
+            return []
+        
+    def apps(x,xs):
+        exp = x
+        if xs:
+            return apps(app(xs[0],exp,xs[1]),xs[2:])
+        else:
+            return x
+        
     while toks:
         if level < 3:
             x = eparse(level+1,toks)
-            if not toks:
-                return x
-            elif op_level(toks[0]) == level:
-                op = toks.pop(0)
-                y  = eparse(level,toks)
-                return assoc(Exp(op,[x,y]))
-            else:
-                return x
+            xs = eparses(level,toks)
+            return apps(x,xs)
         elif level == 3:
             head = toks.pop(0)
             if head == '(':
@@ -156,6 +155,7 @@ def eparse(level,toks):
             else:
                 return var()
 
+            
 # convert Exp to LISP-like prefix string, e.g. (+ 2 x)
 def show_exp_prefix(exp): 
     op,args = exp.parts()

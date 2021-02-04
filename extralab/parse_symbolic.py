@@ -96,6 +96,20 @@ def lex(s): # TODO: lexer for algebraic expressions, from string to token list
             return []
     return toks
 
+# insert missing * as preprocessing between lexing and parsing
+def insert_mul(toks):
+    i = 0
+    while i < len(toks):
+        if (toks[i+1:]
+             and (toks[i] in [')','x'] or toks[i].isdigit())
+             and (toks[i+1] in ['(','x'])):
+            toks.insert(i+1,'*')
+            i += 2
+        else:
+            i += 1
+    return toks
+
+
 def expect_token(expected,toks):
     if not toks:
         print("parse error: expected one of", expected, "found nothing")

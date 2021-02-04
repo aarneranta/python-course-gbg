@@ -33,7 +33,7 @@ def show_polynom(p): # TODO printing polynomials: use + or - between terms, igno
 # the main function: input infix expression, show tree, polynomial, 1st and 2nd derivatives, and the graph
 def main(): # given, don't change
     s = input("enter expression> ")
-    toks = lex(s)
+    toks = insert_mul(lex(s))
     exp = top_parse(toks)
     print("tree:", show_exp_prefix(exp))
     try:

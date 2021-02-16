@@ -73,9 +73,23 @@ def value(exp,x):
     else:
         print("cannot evaluate this expression")
 
+        
+# insert missing * as preprocessing between lexing and parsing
+def insert_mult(toks):
+    i = 0
+    while i < len(toks):
+        if (toks[i+1:]
+             and (toks[i] in [')','x'] or toks[i].isdigit())
+             and (toks[i+1] in ['(','x'])):
+            toks.insert(i+1,'*')
+            i += 2
+        else:
+            i += 1
+    return toks
+
 
 # lexer applied to input string before parser
-def lex(s): # TODO: lexer for algebraic expressions, from string to token list
+def lex(s): 
     toks = []
     while s:
         head = s[0]
@@ -94,19 +108,11 @@ def lex(s): # TODO: lexer for algebraic expressions, from string to token list
         else:
             print("lexer error: unexpected character", head)
             return []
-    return toks
+    return insert_mult(toks)
 
-# insert missing * as preprocessing between lexing and parsing
+
+# to make symbolic.main() work both with and without insert_mul()
 def insert_mul(toks):
-    i = 0
-    while i < len(toks):
-        if (toks[i+1:]
-             and (toks[i] in [')','x'] or toks[i].isdigit())
-             and (toks[i+1] in ['(','x'])):
-            toks.insert(i+1,'*')
-            i += 2
-        else:
-            i += 1
     return toks
 
 

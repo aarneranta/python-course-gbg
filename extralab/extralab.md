@@ -239,11 +239,11 @@ Thus for instance
 ```
 is parsed to the same syntax tree as
 ```
-  2 + (3 * 4)  # add(2,add(3,4))
+  2 + (3 * 4)  # add(2,mul(3,4))
 ```
 rather than
 ```
-  (2 + 3) * 4  # add(add(2,3),4)
+  (2 + 3) * 4  # mul(add(2,3),4)
 ```
 because only this alternative is permitted by the grammar, which says that `*` has a higher precedence level than `+`.
 (You are welcome to test this by following the grammar rules by pencil an paper!)
@@ -268,7 +268,7 @@ Thus it should produce, for instance,
   2 - 3 * 4    from sub(2,mul(3,4))
   (2 - 3) * 4  from mul(sub(2,3),4)
   2 - (3 + 4)  from sub(2,add(3,4))
-  (2 - 3) + 4  from add(sub(2,3),4)
+  2 - 3 + 4    from add(sub(2,3),4)
 ```
 The test file has several examples of this kind.
 

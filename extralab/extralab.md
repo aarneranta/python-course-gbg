@@ -230,19 +230,20 @@ They grammar uses them in a precise way to express the following rules:
 - an expression of lower level can be used on a higher level by putting it in parentheses ()
 - every binary operator has a precedence level, which is the same as the level of the expression formed with it
 - every operator here is **left associative**, which means that for instance `1 + 2 + 3` is interpreted as `(1 + 2) + 3`
+- left associativity is the standard in mathematics and in Python as well, except for exponentiation. However, we have made the `^` operator left associative here for the sake of uniformity
 
 The parser uses the precedence levels to group expressions in intended ways.
 Thus for instance
 ```
   2 + 3 * 4
 ```
-is parsed like
+is parsed to the same syntax tree as
 ```
-  2 + (3 * 4)
+  2 + (3 * 4)  # add(2,add(3,4))
 ```
 rather than
 ```
-  (2 + 3) * 4
+  (2 + 3) * 4  # add(add(2,3),4)
 ```
 because only this alternative is permitted by the grammar, which says that `*` has a higher precedence level than `+`.
 (You are welcome to test this by following the grammar rules by pencil an paper!)
@@ -261,6 +262,15 @@ Thus for instance the rule for printing addition expressions might look like thi
     show_exp_infix(0,arg[0]) + ' + ' + show_exp_infix(1,arg[1])
 ```
 But you can of course cluster the operators in some smart way so that you don't need to write separate rules for every operator.
+The function should use the precedence levels so that it adds parentheses to all and only those places where they are needed.
+Thus it should produce, for instance,
+```
+  2 - 3 * 4    from sub(2,mul(3,4))
+  (2 - 3) * 4  from mul(sub(2,3),4)
+  2 - (3 + 4)  from sub(2,add(3,4))
+  (2 - 3) + 4  from add(sub(2,3),4)
+```
+The test file has several examples of this kind.
 
 Polynomials have a simpler grammar than arbitrary expressions:
 ```

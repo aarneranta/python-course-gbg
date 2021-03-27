@@ -36,6 +36,7 @@ def main(): # given, don't change
     toks = insert_mul(lex(s))
     exp = top_parse(toks)
     print("tree:", show_exp_prefix(exp))
+    print("infix:", show_exp_infix(0,exp))
     try:
         dert = derivative(exp)
         print("derivative:", show_exp_infix(0,dert))

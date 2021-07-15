@@ -5,7 +5,7 @@
 import sys
 
 
-def xbonacci(signature):
+def xbonacci(signature, n):
     return_list = []
     return_list.extend(signature)  # first_nums kopieras!
     to_be_summed = signature.copy()

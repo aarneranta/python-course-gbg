@@ -1,3 +1,6 @@
+# QA/Exercise class 9. The questions are in
+# https://docs.google.com/presentation/d/1xnGedON12yzaomG40oITc3OnYuKtw9QXGMUwE4-m7CM/edit?usp=sharing
+
 # bank account
 
 class Account:

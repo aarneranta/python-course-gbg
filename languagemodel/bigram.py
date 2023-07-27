@@ -1,5 +1,7 @@
 import random
 
+TRAINING_FILE = 'mini.txt'
+
 def build_model(tokens):
     context = ()
     model = {context: {}}
@@ -27,7 +29,7 @@ def predict_next(model, context):
             hit -= alts[word]
 
             
-with open('mini.txt') as file:
+with open(TRAINING_FILE) as file:
     tokens = file.read().split()
     model = build_model(tokens)
     print('MODEL:\n', model)
@@ -38,5 +40,5 @@ with open('mini.txt') as file:
         print(token, end=' ')
         context = token
 
-(): {'det': 4, 'var': 2, 'inte': 1, 'bara': 1, '.': 1}
+
               

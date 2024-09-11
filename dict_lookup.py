@@ -16,10 +16,10 @@ def mkDict(lines,src,tgt):
             pass
     return dict
 
+
 def readDict(filename,src,tgt):
-    file = open(filename)
-    lines = file.readlines()
-    file.close()
+    with open(filename) as file:
+        lines = file.readlines()
     return mkDict(lines,src,tgt)
 
 

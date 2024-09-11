@@ -8,7 +8,7 @@ def linsearch(x,ns):
             return counter
         else:
             counter += 1
-    return -1
+    raise ValueError
 
 # book pp. 462-463
 def binsearch(x,ns):
@@ -24,7 +24,7 @@ def binsearch(x,ns):
             high = mid - 1
         else:
             low = mid + 1
-    return -1
+    raise ValueError
 
 def testSearch():
     Xl = []

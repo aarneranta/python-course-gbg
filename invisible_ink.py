@@ -8,16 +8,19 @@
 import sys
 import binaryconv as bc
 
-def padbin(bin,n):
+
+def padbin(bin, n):
     need = 8 - len(bin)
     bin = need*'0' + bin
     return bin
 
+
 def txt2bin(txt):
     bin = []
     for c in txt:
-        bin.append(padbin(bc.dec2bin(ord(c)),8))
+        bin.append(padbin(bc.dec2bin(ord(c)), 8))
     return "".join(bin)
+
 
 def bin2txt(bin):
     txt = []
@@ -25,6 +28,7 @@ def bin2txt(bin):
         txt.append(chr(bc.bin2dec(bin[:8])))
         bin = bin[8:]
     return "".join(txt)
+
 
 def bin2invisible(bin):
     inv = []
@@ -34,6 +38,7 @@ def bin2invisible(bin):
         else:
             inv.append('\t')
     return "".join(inv)
+
 
 def invisible2bin(inv):
     bin = []
@@ -46,34 +51,35 @@ def invisible2bin(inv):
             pass
     return "".join(bin)
 
+
 def txt2invisible(txt):
     return bin2invisible(txt2bin(txt))
+
 
 def invisible2txt(inv):
     return bin2txt(invisible2bin(inv))
 
+
 def main():
     mode = sys.argv[1]
     filename = sys.argv[2]
-    file = open(filename)
-    content = file.read()
+    with open(filename) as file:
+        content = file.read()
     if mode == "develop":
         print(invisible2txt(content))
     else:
         print(txt2invisible(content))
-    file.close()
 
-main()
 
+if __name__ == "__main__":
+     main()
+
+     
 def simpleAsciiTable():
-    for a in range(0,32):
+    for a in range(0, 32):
         row = ""
         for k in range(0,8):
             row = row + str(a+32*k) + ' ' + chr(a+32*k) + '\t' 
         print(row)
-
-
-
-    
 
 

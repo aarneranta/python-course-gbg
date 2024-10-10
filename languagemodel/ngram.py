@@ -2,10 +2,10 @@ import sys
 import random
 
 # use your lab1 solution
-# from wordfreq import tokenize
+from wordfreq import tokenize
 
 # if you do not have this tokenize function, you can use
-tokenize = lambda ss: ' '.join(ss).split()
+# tokenize = lambda ss: ' '.join(ss).split()
 
 class Model:
     def __init__(self, words, n):
